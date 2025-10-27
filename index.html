@@ -5,19 +5,304 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Karen Schoellkopf | Home</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>body { background: #f9f9f9; min-height: 100vh; display: flex; flex-direction: column; } .hero { padding: 80px 0; text-align: left; background: #fff; flex: 1; } .nav-link.active { font-weight: bold; }</style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+/* ===== RESET & BASE ===== */
+body { 
+  background: #ffffff;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #1a1a1a;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
 
-<!-- Google tag (gtag.js) --> 
+* {
+  box-sizing: border-box;
+}
+
+/* ===== NAVIGATION ===== */
+.navbar {
+  background: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 20px 0;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: -0.5px;
+  color: #1a1a1a !important;
+  text-decoration: none;
+}
+
+/* Remove arrows from navigation */
+.navbar-nav {
+  list-style: none;
+}
+
+.navbar-nav .nav-item {
+  list-style: none;
+}
+
+.navbar-nav .nav-item::before {
+  content: none !important;
+  display: none !important;
+}
+
+.navbar-nav .nav-link {
+  color: #1a1a1a !important;
+  font-weight: 400;
+  font-size: 0.95rem;
+  padding: 8px 16px !important;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #334155 !important;
+}
+
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 16px;
+  width: 0;
+  height: 2px;
+  background: #334155;
+  transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+  width: calc(100% - 32px);
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  padding: 100px 0 80px;
+  background: #ffffff;
+}
+
+.hero h1,
+h1.display-4 {
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -2px;
+  color: #1a1a1a;
+  margin-bottom: 30px;
+}
+
+/* For smaller screens */
+@media (max-width: 768px) {
+  .hero h1,
+  h1.display-4 {
+    font-size: 2.5rem;
+    letter-spacing: -1px;
+  }
+}
+
+.hero .lead,
+p.lead {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: #4a4a4a;
+  font-weight: 400;
+  margin-bottom: 35px;
+  max-width: 800px;
+}
+
+@media (max-width: 768px) {
+  .hero .lead,
+  p.lead {
+    font-size: 1.1rem;
+  }
+}
+
+/* ===== TYPOGRAPHY ===== */
+h1 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: -1.5px;
+  color: #1a1a1a;
+  margin-bottom: 25px;
+  margin-top: 60px;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.5px;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+  margin-top: 50px;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #1a1a1a;
+  margin-bottom: 15px;
+  margin-top: 35px;
+}
+
+p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #4a4a4a;
+  margin-bottom: 20px;
+  max-width: 800px;
+}
+
+/* ===== LISTS ===== */
+ul {
+  margin-bottom: 30px;
+  padding-left: 0;
+  list-style: none;
+}
+
+ul li {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #4a4a4a;
+  margin-bottom: 12px;
+  padding-left: 30px;
+  position: relative;
+}
+
+ul li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #334155;
+  font-weight: 600;
+}
+
+/* ===== LINKS ===== */
+a {
+  color: #334155;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  border-bottom: 2px solid transparent;
+}
+
+a:hover {
+  color: #1e293b;
+  border-bottom-color: #334155;
+}
+
+/* Keep regular paragraph links from getting bold */
+p a {
+  font-weight: 500;
+}
+
+/* ===== EMPHASIS ===== */
+b, strong {
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.accent,
+.highlight {
+  color: #334155;
+  font-weight: 600;
+}
+
+/* ===== SECTIONS WITH ASYMMETRIC LAYOUT ===== */
+.section-offset {
+  padding-left: 60px;
+  margin: 50px 0;
+}
+
+@media (max-width: 768px) {
+  .section-offset {
+    padding-left: 0;
+  }
+}
+
+/* ===== HIGHLIGHT BOXES ===== */
+.highlight-box {
+  background: #f8fafc;
+  border-left: 4px solid #334155;
+  padding: 35px 40px;
+  margin: 40px 0;
+  border-radius: 0 8px 8px 0;
+}
+
+.highlight-box h2,
+.highlight-box h3 {
+  margin-top: 0;
+  color: #334155;
+}
+
+.highlight-box p {
+  margin-bottom: 15px;
+}
+
+.highlight-box p:last-child {
+  margin-bottom: 0;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: #f8fafc;
+  border-top: 1px solid #e0e0e0;
+  padding: 40px 0;
+  margin-top: 80px;
+  text-align: center;
+}
+
+footer p {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  max-width: 1100px;
+  padding-right: 40px;
+  padding-left: 40px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+
+/* ===== SPACING UTILITIES ===== */
+.mb-large {
+  margin-bottom: 60px;
+}
+
+.mt-large {
+  margin-top: 60px;
+}
+
+.section-spacer {
+  margin: 80px 0;
+}
+</style>
+
+  <!-- Google tag (gtag.js) --> 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-5X6X7CQSRR"></script> 
   <script> window.dataLayer = window.dataLayer || []; 
   function gtag(){dataLayer.push(arguments);} 
   gtag('js', new Date()); gtag('config', 'G-5X6X7CQSRR'); 
   </script>
-
-</head>
+  
+  </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light">
   <div class="container">
     <a class="navbar-brand" href="index.html">Karen Schoellkopf</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -39,6 +324,7 @@
       <p class="lead">I build new capabilities for organizations tackling complex problems—from startups navigating regulation to established institutions driving innovation.</p>
       <p>I'm a product and strategy leader who thrives in ambiguous, high-stakes environments. I founded and scaled Leap Fund—one of the nation's first platforms addressing benefits cliffs, from concept to national reach, raising $2M+ in competitive nonprofit funding and testifying before Congress on policy implications. Before that, I spent 10+ years leading product at early-stage startups and driving digital transformation for Fortune 500 companies.
 I specialize in building solutions where there's no playbook: navigating regulatory constraints, managing multi-stakeholder dynamics, and turning vision into execution in resource-constrained environments.</p>
+      <div class="section-offset">  
       <p>I build 0-1 products, programs, and strategies in complex environments. This includes:</p>
         <ul>
           <li><b>Product strategy &amp; development</b>: Designing and launching platforms, tools, and services from concept through scale</li>
@@ -47,21 +333,21 @@ I specialize in building solutions where there's no playbook: navigating regulat
           <li><b>Organizational change</b>: Translating vision into executable programs while navigating stakeholder complexity</li>
         </ul>  
       <p>I've worked across startups and Fortune 500s, in regulated and emerging industries, but what's consistent is the ability to build in ambiguity, constraint, and complexity.</p>
-      <br>
-      <h1>Leap Fund</h1>
+      </div>
+      <div class="highlight-box">
+      <h2>Leap Fund</h2>
         <p><b>Founder &amp; CEO (2018-2024), Strategic Advisor (2024-Present)</b></p>
         <p>Founded and scaled one of the nation's first platforms addressing benefits cliffs, creating a fintech product, educational programs, and employer partnerships from scratch. Testified before U.S. House Rules Committee, presented at Federal Reserve Bank of Atlanta, and collaborated with federal and state agencies on policy solutions. Raised $2M+ through competitive grant awards. Led distributed team of 20 with six-figure budget responsibility.</p>
-      <h1>Prior roles</h1> 
+        <h2>Prior roles</h2> 
         <ul>
           <li><b>Chief Product Officer</b> at VoteRunLead</li>
           <li><b>Head of Community</b> at Justworks</li>
           <li><b>Product/Strategy Lead</b> at Harvest &amp; WalkaboutNYC</li>
           <li><b>Digital transformation consultant</b> for Samsung, Verizon, Target, Meetup, Spotify, American Medical Association, and others</li>
         </ul>
-      <p>See <a href="projects.html">Projects</a> page for selected case studies.</p>
-      <br>
+      <p>See <a href="projects.html"><b>Projects</b></a> page for selected case studies.</p>
+      </div>
       <h1>Thought Leadership</h1>
-      <br>
       <h3>Speaking Engagements</h3>
       <p>Selected speaking engagements on benefits cliffs, fintech, and policy innovation</p>
         <ul>
@@ -74,7 +360,6 @@ I specialize in building solutions where there's no playbook: navigating regulat
           <li>NYS CDFI Conference (2019)</li> 
           <li>Ideas42 Behavioral Summit (2018)</li>
         </ul>
-      <br>
       <h3>Selected Publications &amp; Media</h3>
         <ul>
           <li><b>2025 Report</b>: <a href="https://myleapfund.com/employer-report-2025/">Employers &amp; Benefits Cliffs: Five Years of Field Learnings</a>: Comprehensive Leap Fund report on employer-based benefits cliff interventions</li>
@@ -85,10 +370,10 @@ I specialize in building solutions where there's no playbook: navigating regulat
           <li><b>Featured in</b> The New York Times, The Philadelphia Tribune, The Counter, and others</li>
   
       </ul>
-        <p>Complete publication list on <a href=https://www.linkedin.com/in/karenschoellkopf>LinkedIn</a></p>
+        <p>Complete publication list on <a href=https://www.linkedin.com/in/karenschoellkopf><b>LinkedIn</b></a></p>
       <br>
       <h3>Other Projects</h3>
-      <p>I've also led initiatives addressing equity and safety in tech, including <a href="https://www.hiremorewomenintech.com/"><em>Hire More Women In Tech</em></a> (a campaign which has since expanded to reflect wider diversity in hiring across the sector) and <em>realnames.online</em> (no longer active, challenging unsafe identity defaults).</p>
+      <p>I've also led initiatives addressing equity and safety in tech, including <a href="https://www.hiremorewomenintech.com/"><em><b>Hire More Women In Tech</b></em></a> (a campaign which has since expanded to reflect wider diversity in hiring across the sector) and <em>realnames.online</em> (no longer active, challenging unsafe identity defaults).</p>
       </div>
   </section>
 
