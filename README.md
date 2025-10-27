@@ -31,7 +31,7 @@ Or inline:
 ```
 
 ### Using Highlight Boxes
-For key sections like major accomplishments, use the highlight box component:
+For key sections, utilize the highlight box component:
 
 ```html
 <div class="highlight-box">
@@ -105,7 +105,7 @@ Modern browsers (Chrome, Firefox, Safari, Edge) - last 2 versions
 To change accent color from slate gray to another color:
 
 1. Find and replace `#334155` throughout CSS
-2. Update `#f8fafc` background tint (use a very light version of your new accent)
+2. Update `#f8fafc` background tint (use a very light version of new accent color)
 3. Test hover states and underlines to ensure good contrast
 
 ### Adding New Pages
