@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Karen Schoellkopf | Reading</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* ===== BODY & HTML ===== */
+        html { height: 100%; }
+        body {
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ===== RESET & BASE ===== */
+        body {
+            background: #ffffff;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: #1a1a1a;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        * { box-sizing: border-box; }
+
+        /* ===== NAVIGATION ===== */
+        .navbar {
+            background: #ffffff;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 20px 0;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: -0.5px;
+            color: #1a1a1a !important;
+            text-decoration: none;
+        }
+
+        .navbar-nav { list-style: none; }
+        .navbar-nav .nav-item { list-style: none; }
+        .navbar-nav .nav-item::before {
+            content: none !important;
+            display: none !important;
+        }
+
+        .navbar-nav .nav-link {
+            color: #1a1a1a !important;
+            font-weight: 400;
+            font-size: 0.95rem;
+            padding: 8px 16px !important;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover { color: #334155 !important; }
+
+        .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 16px;
+            width: 0;
+            height: 2px;
+            background: #334155;
+            transition: width 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover::after,
+        .navbar-nav .nav-link.active::after {
+            width: calc(100% - 32px);
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            padding: 100px 0 80px;
+            background: #ffffff;
+            flex: 1;
+        }
+
+        .hero h1, h1.display-4 {
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -2px;
+            color: #1a1a1a;
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1, h1.display-4 {
+                font-size: 2.5rem;
+                letter-spacing: -1px;
+            }
+        }
+
+        .hero .lead, p.lead {
+            font-size: 1.4rem;
+            line-height: 1.6;
+            color: #4a4a4a;
+            font-weight: 400;
+            margin-bottom: 35px;
+            max-width: 800px;
+        }
+
+        @media (max-width: 768px) {
+            .hero .lead, p.lead { font-size: 1.1rem; }
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1.2;
+            letter-spacing: -1.5px;
+            color: #1a1a1a;
+            margin-bottom: 25px;
+            margin-top: 60px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1.3;
+            letter-spacing: -0.5px;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            margin-top: 50px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            line-height: 1.4;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            margin-top: 35px;
+        }
+
+        p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #4a4a4a;
+            margin-bottom: 20px;
+            max-width: 800px;
+        }
+
+        /* ===== LINKS ===== */
+        a {
+            color: #334155;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            border-bottom: 2px solid transparent;
+        }
+
+        a:hover {
+            color: #1e293b;
+            border-bottom-color: #334155;
+        }
+
+        p a { font-weight: 500; }
+
+        /* ===== EMPHASIS ===== */
+        b, strong {
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        /* ===== BOOK LIST STYLES ===== */
+        .book-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 40px 0;
+        }
+
+        .book-item {
+            padding: 16px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .book-item:last-child {
+            border-bottom: none;
+        }
+
+        .book-title {
+            font-weight: 600;
+            color: #1a1a1a;
+            font-size: 1.1rem;
+        }
+
+        .book-author {
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+
+        .book-status {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 12px;
+            margin-left: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .status-done {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .status-dnf {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .status-in-progress {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .loading {
+            color: #64748b;
+            font-style: italic;
+        }
+
+        .year-section {
+            margin-bottom: 60px;
+        }
+
+        .book-count {
+            color: #64748b;
+            font-size: 0.95rem;
+            font-weight: 400;
+            margin-left: 10px;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #f8fafc;
+            border-top: 1px solid #e0e0e0;
+            padding: 40px 0;
+            margin-top: 80px;
+            text-align: center;
+            width: 100%;
+            flex-shrink: 0;
+        }
+
+        footer p {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            max-width: 100%;
+        }
+
+        /* ===== CONTAINER ===== */
+        .container {
+            max-width: 1100px;
+            padding-right: 40px;
+            padding-left: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding-right: 20px;
+                padding-left: 20px;
+            }
+        }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5X6X7CQSRR"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-5X6X7CQSRR');
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Karen Schoellkopf</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="reading.html">Reading</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1 class="display-4">What I'm Reading</h1>
+            <p class="lead">What's informing my worldview</p>
+
+            <div class="year-section">
+                <h2>2026 <span class="book-count" id="count-2026"></span></h2>
+                <ul class="book-list" id="books-2026">
+                    <li class="loading">Loading...</li>
+                </ul>
+            </div>
+
+            <div class="year-section">
+                <h2>2025 <span class="book-count" id="count-2025"></span></h2>
+                <ul class="book-list" id="books-2025">
+                    <li class="loading">Loading...</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>Made with ❤️ in Brooklyn</p>
+            <p>&copy; 2025 Karen Schoellkopf</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // CSV URLs from Google Sheets
+        const SHEETS = {
+            2026: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQuOieHRZ_cDgvoN7TDeujJWV5Akg1ITU8WWEwrDnHjEkyzGEEvoDh4uaGJvZuNYl0WQL6_jTultDNW/pub?gid=1004744420&single=true&output=csv',
+            2025: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQuOieHRZ_cDgvoN7TDeujJWV5Akg1ITU8WWEwrDnHjEkyzGEEvoDh4uaGJvZuNYl0WQL6_jTultDNW/pub?gid=1785861805&single=true&output=csv'
+        };
+
+        // Parse CSV text into array of objects
+        function parseCSV(text) {
+            const lines = text.trim().split('\n');
+            const headers = parseCSVLine(lines[0]);
+            const books = [];
+            
+            for (let i = 1; i < lines.length; i++) {
+                const values = parseCSVLine(lines[i]);
+                if (values.length >= 3) {
+                    books.push({
+                        title: values[0] || '',
+                        author: values[1] || '',
+                        status: values[2] || ''
+                    });
+                }
+            }
+            return books;
+        }
+
+        // Parse a single CSV line, handling quoted fields
+        function parseCSVLine(line) {
+            const result = [];
+            let current = '';
+            let inQuotes = false;
+            
+            for (let i = 0; i < line.length; i++) {
+                const char = line[i];
+                if (char === '"') {
+                    inQuotes = !inQuotes;
+                } else if (char === ',' && !inQuotes) {
+                    result.push(current.trim());
+                    current = '';
+                } else {
+                    current += char;
+                }
+            }
+            result.push(current.trim());
+            return result;
+        }
+
+        // Get status class for styling
+        function getStatusClass(status) {
+            const s = status.toLowerCase().trim();
+            if (s === 'done') return 'status-done';
+            if (s === 'dnf') return 'status-dnf';
+            if (s === 'in progress') return 'status-in-progress';
+            return '';
+        }
+
+        // Render books to the page
+        function renderBooks(books, containerId, countId) {
+            const container = document.getElementById(containerId);
+            const countEl = document.getElementById(countId);
+            
+            if (books.length === 0) {
+                container.innerHTML = '<li class="book-item">No books yet!</li>';
+                countEl.textContent = '';
+                return;
+            }
+
+            // Sort: In Progress first, then Done, then DNF
+            const statusOrder = { 'in progress': 0, 'done': 1, 'dnf': 2 };
+            books.sort((a, b) => {
+                const orderA = statusOrder[a.status.toLowerCase().trim()] ?? 3;
+                const orderB = statusOrder[b.status.toLowerCase().trim()] ?? 3;
+                return orderA - orderB;
+            });
+
+            const html = books.map(book => {
+                const statusClass = getStatusClass(book.status);
+                const statusBadge = book.status ? 
+                    `<span class="book-status ${statusClass}">${book.status}</span>` : '';
+                
+                return `
+                    <li class="book-item">
+                        <span class="book-title">${book.title}</span>${statusBadge}<br>
+                        <span class="book-author">${book.author}</span>
+                    </li>
+                `;
+            }).join('');
+
+            container.innerHTML = html;
+            countEl.textContent = `(${books.length} book${books.length !== 1 ? 's' : ''})`;
+        }
+
+        // Fetch and display books for a year
+        async function loadBooks(year) {
+            const url = SHEETS[year];
+            const containerId = `books-${year}`;
+            const countId = `count-${year}`;
+            
+            try {
+                const response = await fetch(url);
+                const text = await response.text();
+                const books = parseCSV(text);
+                renderBooks(books, containerId, countId);
+            } catch (error) {
+                console.error(`Error loading ${year} books:`, error);
+                document.getElementById(containerId).innerHTML = 
+                    '<li class="book-item">Unable to load books. Please try again later.</li>';
+            }
+        }
+
+        // Load all years on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            loadBooks(2026);
+            loadBooks(2025);
+        });
+    </script>
+</body>
+</html>
