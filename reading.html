@@ -113,16 +113,6 @@
         }
 
         /* ===== TYPOGRAPHY ===== */
-        h1 {
-            font-size: 3.5rem;
-            font-weight: 900;
-            line-height: 1.2;
-            letter-spacing: -1.5px;
-            color: #1a1a1a;
-            margin-bottom: 25px;
-            margin-top: 60px;
-        }
-
         h2 {
             font-size: 2rem;
             font-weight: 700;
@@ -133,43 +123,12 @@
             margin-top: 50px;
         }
 
-        h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            line-height: 1.4;
-            color: #1a1a1a;
-            margin-bottom: 15px;
-            margin-top: 35px;
-        }
-
         p {
             font-size: 1.05rem;
             line-height: 1.8;
             color: #4a4a4a;
             margin-bottom: 20px;
             max-width: 800px;
-        }
-
-        /* ===== LINKS ===== */
-        a {
-            color: #334155;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.2s ease;
-            border-bottom: 2px solid transparent;
-        }
-
-        a:hover {
-            color: #1e293b;
-            border-bottom-color: #334155;
-        }
-
-        p a { font-weight: 500; }
-
-        /* ===== EMPHASIS ===== */
-        b, strong {
-            font-weight: 700;
-            color: #1a1a1a;
         }
 
         /* ===== BOOK LIST STYLES ===== */
@@ -180,8 +139,9 @@
         }
 
         .book-item {
-            padding: 16px 0;
-            border-bottom: 1px solid #e0e0e0;
+            padding: 8px 0;
+            font-size: 1.05rem;
+            border-bottom: 1px solid #f0f0f0;
         }
 
         .book-item:last-child {
@@ -189,40 +149,28 @@
         }
 
         .book-title {
-            font-weight: 600;
             color: #1a1a1a;
-            font-size: 1.1rem;
         }
 
         .book-author {
             color: #64748b;
-            font-size: 0.95rem;
         }
 
-        .book-status {
-            display: inline-block;
-            font-size: 0.8rem;
-            font-weight: 600;
-            padding: 3px 10px;
-            border-radius: 12px;
-            margin-left: 10px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+        /* Status styles: bold = in progress, regular = done, italic = dnf */
+        .book-item.in-progress .book-title {
+            font-weight: 700;
         }
 
-        .status-done {
-            background: #dcfce7;
-            color: #166534;
+        .book-item.done .book-title {
+            font-weight: 400;
         }
 
-        .status-dnf {
-            background: #fee2e2;
-            color: #991b1b;
+        .book-item.dnf {
+            font-style: italic;
         }
 
-        .status-in-progress {
-            background: #dbeafe;
-            color: #1e40af;
+        .book-item.dnf .book-title {
+            font-weight: 400;
         }
 
         .loading {
@@ -234,11 +182,33 @@
             margin-bottom: 60px;
         }
 
-        .book-count {
+        /* ===== KEY/LEGEND ===== */
+        .reading-key {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #e0e0e0;
+            font-size: 0.9rem;
             color: #64748b;
-            font-size: 0.95rem;
+        }
+
+        .key-separator {
+            margin: 0 15px;
+            color: #cbd5e1;
+        }
+
+        .key-bold {
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        .key-regular {
             font-weight: 400;
-            margin-left: 10px;
+            color: #1a1a1a;
+        }
+
+        .key-italic {
+            font-style: italic;
+            color: #1a1a1a;
         }
 
         /* ===== FOOTER ===== */
@@ -306,17 +276,25 @@
             <p class="lead">What's informing my worldview</p>
 
             <div class="year-section">
-                <h2>2026 <span class="book-count" id="count-2026"></span></h2>
+                <h2>2026</h2>
                 <ul class="book-list" id="books-2026">
                     <li class="loading">Loading...</li>
                 </ul>
             </div>
 
             <div class="year-section">
-                <h2>2025 <span class="book-count" id="count-2025"></span></h2>
+                <h2>2025</h2>
                 <ul class="book-list" id="books-2025">
                     <li class="loading">Loading...</li>
                 </ul>
+            </div>
+
+            <div class="reading-key">
+                <span class="key-bold">Bold</span> = currently reading
+                <span class="key-separator">·</span>
+                <span class="key-regular">Regular</span> = finished
+                <span class="key-separator">·</span>
+                <span class="key-italic">Italic</span> = did not finish
             </div>
         </div>
     </section>
@@ -339,7 +317,6 @@
         // Parse CSV text into array of objects
         function parseCSV(text) {
             const lines = text.trim().split('\n');
-            const headers = parseCSVLine(lines[0]);
             const books = [];
             
             for (let i = 1; i < lines.length; i++) {
@@ -379,20 +356,18 @@
         // Get status class for styling
         function getStatusClass(status) {
             const s = status.toLowerCase().trim();
-            if (s === 'done') return 'status-done';
-            if (s === 'dnf') return 'status-dnf';
-            if (s === 'in progress') return 'status-in-progress';
-            return '';
+            if (s === 'in progress') return 'in-progress';
+            if (s === 'done') return 'done';
+            if (s === 'dnf') return 'dnf';
+            return 'done';
         }
 
         // Render books to the page
-        function renderBooks(books, containerId, countId) {
+        function renderBooks(books, containerId) {
             const container = document.getElementById(containerId);
-            const countEl = document.getElementById(countId);
             
             if (books.length === 0) {
                 container.innerHTML = '<li class="book-item">No books yet!</li>';
-                countEl.textContent = '';
                 return;
             }
 
@@ -406,32 +381,27 @@
 
             const html = books.map(book => {
                 const statusClass = getStatusClass(book.status);
-                const statusBadge = book.status ? 
-                    `<span class="book-status ${statusClass}">${book.status}</span>` : '';
                 
                 return `
-                    <li class="book-item">
-                        <span class="book-title">${book.title}</span>${statusBadge}<br>
-                        <span class="book-author">${book.author}</span>
+                    <li class="book-item ${statusClass}">
+                        <span class="book-title">${book.title}</span>, <span class="book-author">${book.author}</span>
                     </li>
                 `;
             }).join('');
 
             container.innerHTML = html;
-            countEl.textContent = `(${books.length} book${books.length !== 1 ? 's' : ''})`;
         }
 
         // Fetch and display books for a year
         async function loadBooks(year) {
             const url = SHEETS[year];
             const containerId = `books-${year}`;
-            const countId = `count-${year}`;
             
             try {
                 const response = await fetch(url);
                 const text = await response.text();
                 const books = parseCSV(text);
-                renderBooks(books, containerId, countId);
+                renderBooks(books, containerId);
             } catch (error) {
                 console.error(`Error loading ${year} books:`, error);
                 document.getElementById(containerId).innerHTML = 
