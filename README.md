@@ -1,5 +1,5 @@
 # Karen Schoellkopf Portfolio Website
-Personal Portfolio Site: This is a simple personal portfolio site, nothing fancy to see here, but you can get a deeper look at my work.
+Personal Portfolio Site: This is a simple personal portfolio site, nothing fancy to see here, but shows a deeper look at my work.
 
 ## Design System
 This site uses a minimal design approach with a slate gray accent color.
@@ -22,16 +22,16 @@ This site uses a minimal design approach with a slate gray accent color.
 To highlight important text in the slate gray accent color:
 
 ```html
-<span class="accent">Your highlighted text</span>
+<span class="accent">Highlighted text</span>
 ```
 
 Or inline:
 ```html
-<span style="color: #334155;">Your highlighted text</span>
+<span style="color: #334155;">Highlighted text</span>
 ```
 
 ### Using Highlight Boxes
-For key sections, utilize the highlight box component:
+For key sections, there is a highlight box component:
 
 ```html
 <div class="highlight-box">
@@ -49,13 +49,13 @@ To create an asymmetric, editorial-style layout for certain sections:
 
 ```html
 <div class="section-offset">
-  <h2>Your Heading</h2>
-  <p>Your content...</p>
+  <h2>Heading</h2>
+  <p>Content...</p>
 </div>
 
 ```
 
-This adds left padding to create visual interest in specific sections. (Note: Automatically removes on mobile for better readability)
+This adds left padding to create visual interest in specific sections. (Note: Automatically removed on mobile for better readability)
 
 ## File Structure
 
@@ -64,6 +64,7 @@ portfolio-website/
 ├── index.html          # Home page
 ├── projects.html       # Projects/case studies page
 ├── contact.html        # Contact page
+├── reading.html        # What I'm reading page
 └── README.md           # This file
 ```
 
@@ -94,12 +95,6 @@ Modern browsers (Chrome, Firefox, Safari, Edge) - last 2 versions
 
 ## Maintenance Notes
 
-### Updating Content
-
-1. **Home page:** Edit `index.html`
-2. **Projects:** Edit `projects.html`
-3. **Contact info:** Edit `contact.html`
-
 ### Changing the Accent Color
 
 To change accent color from slate gray to another color:
@@ -108,17 +103,17 @@ To change accent color from slate gray to another color:
 2. Update `#f8fafc` background tint (use a very light version of new accent color)
 3. Test hover states and underlines to ensure good contrast
 
-### Adding New Pages
+### Reading Page
+The reading page (reading.html) pulls data automatically from a published Google Sheet:
+- 2025: https://docs.google.com/spreadsheets/d/e/2PACX-1vQuOieHRZ_cDgvoN7TDeujJWV5Akg1ITU8WWEwrDnHjEkyzGEEvoDh4uaGJvZuNYl0WQL6_jTultDNW/pub?gid=1785861805&single=true&output=csv
+- 2026: https://docs.google.com/spreadsheets/d/e/2PACX-1vQuOieHRZ_cDgvoN7TDeujJWV5Akg1ITU8WWEwrDnHjEkyzGEEvoDh4uaGJvZuNYl0WQL6_jTultDNW/pub?gid=1004744420&single=true&output=csv
 
-1. Copy the structure from an existing page
-2. Update the navigation `active` class
-3. Ensure the footer is included
-4. Test responsive behavior
+To add a new year, publish a new tab from the Google Sheet (File → Share → Publish to web) and add the URL to the SHEETS object in reading.html.
 
 ## License
 
-© 2025 Karen Schoellkopf
+© 2026 Karen Schoellkopf
 
 ---
 
-**Last updated:** October 2025
+**Last updated:** January 2026
