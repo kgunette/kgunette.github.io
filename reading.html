@@ -167,6 +167,7 @@
 
         .book-item {
             padding: 8px 0;
+            padding-left: 0;
             font-size: 1.05rem;
             border-bottom: 1px solid #f0f0f0;
         }
@@ -175,6 +176,11 @@
             border-bottom: none;
         }
 
+        .book-item::before {
+          content: none !important;
+          display: none !important;
+        }
+        
         .book-title {
             color: #1a1a1a;
         }
