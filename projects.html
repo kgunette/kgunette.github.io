@@ -5,23 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Projects | Karen Schoellkopf</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
   <style>
-
 /* ===== BODY & HTML ===== */
 html {
   height: 100%;
 }
-
 body {
   min-height: 100%;
   display: flex;
   flex-direction: column;
 }
-
 /* ===== RESET & BASE ===== */
-body { 
+body {
   background: #ffffff;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   color: #1a1a1a;
@@ -29,18 +25,15 @@ body {
   margin: 0;
   padding: 0;
 }
-
 * {
   box-sizing: border-box;
 }
-
 /* ===== NAVIGATION ===== */
 .navbar {
   background: #ffffff;
   border-bottom: 1px solid #e0e0e0;
   padding: 20px 0;
 }
-
 .navbar-brand {
   font-weight: 700;
   font-size: 1.1rem;
@@ -48,21 +41,17 @@ body {
   color: #1a1a1a !important;
   text-decoration: none;
 }
-
 /* Remove arrows from navigation */
 .navbar-nav {
   list-style: none;
 }
-
 .navbar-nav .nav-item {
   list-style: none;
 }
-
 .navbar-nav .nav-item::before {
   content: none !important;
   display: none !important;
 }
-
 .navbar-nav .nav-link {
   color: #1a1a1a !important;
   font-weight: 400;
@@ -71,11 +60,9 @@ body {
   position: relative;
   transition: color 0.3s ease;
 }
-
 .navbar-nav .nav-link:hover {
   color: #334155 !important;
 }
-
 .navbar-nav .nav-link::after {
   content: '';
   position: absolute;
@@ -86,19 +73,16 @@ body {
   background: #334155;
   transition: width 0.3s ease;
 }
-
 .navbar-nav .nav-link:hover::after,
 .navbar-nav .nav-link.active::after {
   width: calc(100% - 32px);
 }
-
 /* ===== HERO SECTION ===== */
 .hero {
   padding: 100px 0 80px;
   background: #ffffff;
   flex: 1; /* Makes the content area grow to fill available space */
 }
-
 .hero h1,
 h1.display-4 {
   font-size: 4rem;
@@ -108,7 +92,6 @@ h1.display-4 {
   color: #1a1a1a;
   margin-bottom: 30px;
 }
-
 /* For smaller screens */
 @media (max-width: 768px) {
   .hero h1,
@@ -117,7 +100,6 @@ h1.display-4 {
     letter-spacing: -1px;
   }
 }
-
 .hero .lead,
 p.lead {
   font-size: 1.4rem;
@@ -127,14 +109,12 @@ p.lead {
   margin-bottom: 35px;
   max-width: 800px;
 }
-
 @media (max-width: 768px) {
   .hero .lead,
   p.lead {
     font-size: 1.1rem;
   }
 }
-
 /* ===== TYPOGRAPHY ===== */
 h1 {
   font-size: 3.5rem;
@@ -145,7 +125,6 @@ h1 {
   margin-bottom: 25px;
   margin-top: 60px;
 }
-
 h2 {
   font-size: 2rem;
   font-weight: 700;
@@ -155,7 +134,6 @@ h2 {
   margin-bottom: 20px;
   margin-top: 50px;
 }
-
 h3 {
   font-size: 1.5rem;
   font-weight: 700;
@@ -164,7 +142,6 @@ h3 {
   margin-bottom: 15px;
   margin-top: 35px;
 }
-
 p {
   font-size: 1.05rem;
   line-height: 1.8;
@@ -172,14 +149,12 @@ p {
   margin-bottom: 20px;
   max-width: 800px;
 }
-
 /* ===== LISTS ===== */
 ul {
   margin-bottom: 30px;
   padding-left: 0;
   list-style: none;
 }
-
 ul li {
   font-size: 1.05rem;
   line-height: 1.8;
@@ -188,7 +163,6 @@ ul li {
   padding-left: 30px;
   position: relative;
 }
-
 ul li::before {
   content: '→';
   position: absolute;
@@ -196,7 +170,6 @@ ul li::before {
   color: #334155;
   font-weight: 600;
 }
-
 /* ===== LINKS ===== */
 a {
   color: #334155;
@@ -205,41 +178,34 @@ a {
   transition: all 0.2s ease;
   border-bottom: 2px solid transparent;
 }
-
 a:hover {
   color: #1e293b;
   border-bottom-color: #334155;
 }
-
 /* Keep regular paragraph links from getting bold */
 p a {
   font-weight: 500;
 }
-
 /* ===== EMPHASIS ===== */
 b, strong {
   font-weight: 700;
   color: #1a1a1a;
 }
-
 .accent,
 .highlight {
   color: #334155;
   font-weight: 600;
 }
-
 /* ===== SECTIONS WITH ASYMMETRIC LAYOUT ===== */
 .section-offset {
   padding-left: 60px;
   margin: 50px 0;
 }
-
 @media (max-width: 768px) {
   .section-offset {
     padding-left: 0;
   }
 }
-
 /* ===== HIGHLIGHT BOXES ===== */
 .highlight-box {
   background: #f8fafc;
@@ -248,21 +214,17 @@ b, strong {
   margin: 40px 0;
   border-radius: 0 8px 8px 0;
 }
-
 .highlight-box h2,
 .highlight-box h3 {
   margin-top: 0;
   color: #334155;
 }
-
 .highlight-box p {
   margin-bottom: 15px;
 }
-
 .highlight-box p:last-child {
   margin-bottom: 0;
 }
-
 /* ===== FOOTER ===== */
 footer {
   background: #f8fafc;
@@ -276,52 +238,44 @@ footer {
   right: 0;
   flex-shrink: 0; /* Prevents footer from shrinking */
 }
-
 footer p {
   color: #64748b;
   font-size: 0.9rem;
   margin-bottom: 8px;
   max-width: 100%;
 }
-
 /* ===== CONTAINER ===== */
 .container {
   max-width: 1100px;
   padding-right: 40px;
   padding-left: 40px;
 }
-
 @media (max-width: 768px) {
   .container {
     padding-right: 20px;
     padding-left: 20px;
   }
 }
-
 /* ===== SPACING UTILITIES ===== */
 .mb-large {
   margin-bottom: 60px;
 }
-
 .mt-large {
   margin-top: 60px;
 }
-
 .section-spacer {
   margin: 80px 0;
 }
 </style>
-
-  <!-- Google tag (gtag.js) --> 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5X6X7CQSRR"></script> 
-  <script> window.dataLayer = window.dataLayer || []; 
-  function gtag(){dataLayer.push(arguments);} 
-  gtag('js', new Date()); gtag('config', 'G-5X6X7CQSRR'); 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5X6X7CQSRR"></script>
+  <script> window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date()); gtag('config', 'G-5X6X7CQSRR');
   </script>
-  
+
   </head>
 <body>
-
 <nav class="navbar navbar-expand-lg navbar-light">
   <div class="container">
     <a class="navbar-brand" href="index.html">Karen Schoellkopf</a>
@@ -337,7 +291,7 @@ footer p {
     </div>
   </div>
 </nav>
-  
+
   <section class="hero">
     <div class="container">
       <h1 class="display-4">Featured Projects</h1>
@@ -370,6 +324,27 @@ footer p {
       <hr>
       <br>
       <div class="project">
+        <h2>GameTime: Modern League Management for Rec Hockey</h2>
+        <p><i>Product Lead &amp; Builder (2025–present) | Work in Progress</i></p>
+        <p><b>The Challenge</b></p>
+        <p>Adult recreational hockey leagues run on a patchwork of group texts, spreadsheets, and outdated software with clunky UX and limited league-level tools. My wife is a goalie in two NYC rec leagues, and is also an accomplished product manager and designer. She had been frustrated with the existing tools her leagues have used for years, and knew from talking to league commissioners and team managers that the feeling was universal. I heard her complaints loud and clear, and I believed that we could do better.</p>
+        <p><b>My Role</b></p>
+        <p>Designing and building GameTime end-to-end: product strategy, architecture, and all code. My wife is co-founder and design lead, bringing firsthand domain expertise as a player and structured UX methodology as a designer.</p>
+        <p><b>The Approach</b></p>
+        <ul>
+          <li>Building with Claude as an AI co-pilot: I drive all product and design decisions while using Claude to accelerate full-stack development, from database schema to production deployment</li>
+          <li>Next.js, TypeScript, PostgreSQL, Prisma, Supabase Auth, Tailwind CSS: a modern stack chosen for speed to ship and ease of solo maintenance</li>
+          <li>Building for a user base we know personally: my wife's leagues are our design partners, and their real workflows drive every feature decision</li>
+        </ul>
+        <div class="highlight-box">
+        <p><b>Where It Stands</b></p>
+        <p>Core platform is functional and deployed: team and league creation, roster management, game scheduling, RSVP with email reminders, goalie pool management, and role-based permissions for players, team managers, and league commissioners. Currently in closed QA, refining the experience based on a formal UX review before opening to our beachhead league for beta.</p>
+        </div>
+      </div>
+      <br>
+      <hr>
+      <br>
+      <div class="project">
         <h2>Vote Run Lead: Digital Transformation for Political Training</h2>
         <p><i>Chief Product Officer (2015-2016)</i></p>
         <p><b>The Challenge</b></p>
@@ -393,7 +368,7 @@ footer p {
       <br>
       <div class="project">
         <h2>WalkaboutNYC: Building NYC's Tech Community</h2>
-        <p><i>Product Lead (2010-2013)</i></p>      
+        <p><i>Product Lead (2010-2013)</i></p>
         <P><b>The Challenge</b></P>
         <p>In 2010, NYC's tech ecosystem was nascent and fragmented. Companies and workers lacked ways to discover each other, and the community needed connective tissue to appreciate their own local talent and products, and accelerate growth in the sector.</p>
         <p><b>My Role</b></p>
@@ -467,7 +442,7 @@ footer p {
     <div class="container">
       <p>Made with ❤️ in Brooklyn</p>
       <p>&copy; 2025 Karen Schoellkopf</p>
-    </div>  
+    </div>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
