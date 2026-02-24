@@ -1,5 +1,5 @@
 # Karen Schoellkopf Portfolio Website
-Personal Portfolio Site: This is a simple personal portfolio site, nothing fancy to see here, but shows a deeper look at my work.
+Personal Portfolio Site: This is a simple personal portfolio site, nothing fancy to see here, but shows a deeper look at my work. Cowritten with Claude.
 
 ## Design System
 This site uses a minimal design approach with a slate gray accent color.
