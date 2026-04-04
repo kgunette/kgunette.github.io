@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Section headings */
+.section-heading {
+  font-size: 2.25rem !important;
+  line-height: 1.2 !important;
+  font-weight: 800 !important;
+}
+
+/* Hero fade-up on load */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.anim {
+  opacity: 0;
+  animation: fadeUp 0.65s ease-out forwards;
+}
+.d1 { animation-delay: 0.1s; }
+.d2 { animation-delay: 0.25s; }
+.d3 { animation-delay: 0.4s; }
+.d4 { animation-delay: 0.55s; }
+.d5 { animation-delay: 0.7s; }
+
+/* Scroll-triggered section reveals */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.55s ease-out, transform 0.55s ease-out;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Divider lines grow on scroll */
+.divider-anim {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.45s ease-out;
+}
+.divider-anim.visible {
+  transform: scaleX(1);
+}
+
+/* Nav hover underline slide-in */
+.nav-hover-link {
+  position: relative;
+}
+.nav-hover-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background: #E8513D; /* coral-accent */
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease-out;
+}
+.nav-hover-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* Heart wave */
+@keyframes heartWave {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(12deg); }
+  75% { transform: rotate(-12deg); }
+}
+.heart-wave {
+  display: inline-block;
+  animation: heartWave 1.5s ease-in-out infinite;
+  transform-origin: center bottom;
+}

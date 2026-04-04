@@ -1,449 +1,569 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Projects | Karen Schoellkopf</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
-  <style>
-/* ===== BODY & HTML ===== */
-html {
-  height: 100%;
-}
-body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-/* ===== RESET & BASE ===== */
-body {
-  background: #ffffff;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  color: #1a1a1a;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
-}
-* {
-  box-sizing: border-box;
-}
-/* ===== NAVIGATION ===== */
-.navbar {
-  background: #ffffff;
-  border-bottom: 1px solid #e0e0e0;
-  padding: 20px 0;
-}
-.navbar-brand {
-  font-weight: 700;
-  font-size: 1.1rem;
-  letter-spacing: -0.5px;
-  color: #1a1a1a !important;
-  text-decoration: none;
-}
-/* Remove arrows from navigation */
-.navbar-nav {
-  list-style: none;
-}
-.navbar-nav .nav-item {
-  list-style: none;
-}
-.navbar-nav .nav-item::before {
-  content: none !important;
-  display: none !important;
-}
-.navbar-nav .nav-link {
-  color: #1a1a1a !important;
-  font-weight: 400;
-  font-size: 0.95rem;
-  padding: 8px 16px !important;
-  position: relative;
-  transition: color 0.3s ease;
-}
-.navbar-nav .nav-link:hover {
-  color: #334155 !important;
-}
-.navbar-nav .nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: 5px;
-  left: 16px;
-  width: 0;
-  height: 2px;
-  background: #334155;
-  transition: width 0.3s ease;
-}
-.navbar-nav .nav-link:hover::after,
-.navbar-nav .nav-link.active::after {
-  width: calc(100% - 32px);
-}
-/* ===== HERO SECTION ===== */
-.hero {
-  padding: 100px 0 80px;
-  background: #ffffff;
-  flex: 1; /* Makes the content area grow to fill available space */
-}
-.hero h1,
-h1.display-4 {
-  font-size: 4rem;
-  font-weight: 900;
-  line-height: 1.1;
-  letter-spacing: -2px;
-  color: #1a1a1a;
-  margin-bottom: 30px;
-}
-/* For smaller screens */
-@media (max-width: 768px) {
-  .hero h1,
-  h1.display-4 {
-    font-size: 2.5rem;
-    letter-spacing: -1px;
-  }
-}
-.hero .lead,
-p.lead {
-  font-size: 1.4rem;
-  line-height: 1.6;
-  color: #4a4a4a;
-  font-weight: 400;
-  margin-bottom: 35px;
-  max-width: 800px;
-}
-@media (max-width: 768px) {
-  .hero .lead,
-  p.lead {
-    font-size: 1.1rem;
-  }
-}
-/* ===== TYPOGRAPHY ===== */
-h1 {
-  font-size: 3.5rem;
-  font-weight: 900;
-  line-height: 1.2;
-  letter-spacing: -1.5px;
-  color: #1a1a1a;
-  margin-bottom: 25px;
-  margin-top: 60px;
-}
-h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 1.3;
-  letter-spacing: -0.5px;
-  color: #1a1a1a;
-  margin-bottom: 20px;
-  margin-top: 50px;
-}
-h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  line-height: 1.4;
-  color: #1a1a1a;
-  margin-bottom: 15px;
-  margin-top: 35px;
-}
-p {
-  font-size: 1.05rem;
-  line-height: 1.8;
-  color: #4a4a4a;
-  margin-bottom: 20px;
-  max-width: 800px;
-}
-/* ===== LISTS ===== */
-ul {
-  margin-bottom: 30px;
-  padding-left: 0;
-  list-style: none;
-}
-ul li {
-  font-size: 1.05rem;
-  line-height: 1.8;
-  color: #4a4a4a;
-  margin-bottom: 12px;
-  padding-left: 30px;
-  position: relative;
-}
-ul li::before {
-  content: '→';
-  position: absolute;
-  left: 0;
-  color: #334155;
-  font-weight: 600;
-}
-/* ===== LINKS ===== */
-a {
-  color: #334155;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.2s ease;
-  border-bottom: 2px solid transparent;
-}
-a:hover {
-  color: #1e293b;
-  border-bottom-color: #334155;
-}
-/* Keep regular paragraph links from getting bold */
-p a {
-  font-weight: 500;
-}
-/* ===== EMPHASIS ===== */
-b, strong {
-  font-weight: 700;
-  color: #1a1a1a;
-}
-.accent,
-.highlight {
-  color: #334155;
-  font-weight: 600;
-}
-/* ===== SECTIONS WITH ASYMMETRIC LAYOUT ===== */
-.section-offset {
-  padding-left: 60px;
-  margin: 50px 0;
-}
-@media (max-width: 768px) {
-  .section-offset {
-    padding-left: 0;
-  }
-}
-/* ===== HIGHLIGHT BOXES ===== */
-.highlight-box {
-  background: #f8fafc;
-  border-left: 4px solid #334155;
-  padding: 35px 40px;
-  margin: 40px 0;
-  border-radius: 0 8px 8px 0;
-}
-.highlight-box h2,
-.highlight-box h3 {
-  margin-top: 0;
-  color: #334155;
-}
-.highlight-box p {
-  margin-bottom: 15px;
-}
-.highlight-box p:last-child {
-  margin-bottom: 0;
-}
-/* ===== FOOTER ===== */
-footer {
-  background: #f8fafc;
-  border-top: 1px solid #e0e0e0;
-  padding: 40px 0;
-  margin-top: 80px;
-  text-align: center;
-  width: 100%;
-  position: relative;
-  left: 0;
-  right: 0;
-  flex-shrink: 0; /* Prevents footer from shrinking */
-}
-footer p {
-  color: #64748b;
-  font-size: 0.9rem;
-  margin-bottom: 8px;
-  max-width: 100%;
-}
-/* ===== CONTAINER ===== */
-.container {
-  max-width: 1100px;
-  padding-right: 40px;
-  padding-left: 40px;
-}
-@media (max-width: 768px) {
-  .container {
-    padding-right: 20px;
-    padding-left: 20px;
-  }
-}
-/* ===== SPACING UTILITIES ===== */
-.mb-large {
-  margin-bottom: 60px;
-}
-.mt-large {
-  margin-top: 60px;
-}
-.section-spacer {
-  margin: 80px 0;
-}
-</style>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5X6X7CQSRR"></script>
-  <script> window.dataLayer = window.dataLayer || [];
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Projects | Karen Schoellkopf</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml"/>
+<meta name="description" content="Selected case studies from Leap Fund, Justworks, and VoteRunLead, plus additional work across consulting, civic tech, and independent projects."/>
+<meta property="og:title" content="Projects | Karen Schoellkopf"/>
+<meta property="og:description" content="Selected case studies from Leap Fund, Justworks, and VoteRunLead, plus additional work across consulting, civic tech, and independent projects."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://karenschoellkopf.com/projects"/>
+<link rel="stylesheet" href="style.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;700;800&amp;family=Manrope:wght@200;300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5X6X7CQSRR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date()); gtag('config', 'G-5X6X7CQSRR');
-  </script>
-
-  </head>
-<body>
-<nav class="navbar navbar-expand-lg navbar-light">
-  <div class="container">
-    <a class="navbar-brand" href="index.html">Karen Schoellkopf</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link active" href="projects.html">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-  </div>
+  gtag('js', new Date());
+  gtag('config', 'G-5X6X7CQSRR');
+</script>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed pb-20 md:pb-0">
+<!-- Skip to content (accessibility) -->
+<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:font-headline focus:font-bold focus:text-sm">Skip to content</a>
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 z-50 w-full bg-surface/80 backdrop-blur-md transition-all duration-300 border-b border-outline-variant/30">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-5xl mx-auto">
+<a class="text-xl font-bold font-headline text-on-surface tracking-tight" href="index.html">Karen Schoellkopf</a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-secondary/60 font-medium text-xs tracking-[0.1em] font-label hover:opacity-100 hover:text-coral-accent transition-all duration-300 nav-hover-link" href="index.html">Home</a>
+<a class="text-on-surface font-semibold text-xs tracking-[0.1em] font-label hover:text-coral-accent transition-colors duration-300" href="projects.html">Projects<span class="text-coral-accent">.</span></a>
+<a class="text-secondary/60 font-medium text-xs tracking-[0.1em] font-label hover:opacity-100 hover:text-coral-accent transition-all duration-300 nav-hover-link" href="about.html">About</a>
+</div>
+<button id="menu-toggle" class="md:hidden" aria-label="Open menu">
+<svg class="w-6 h-6 text-on-surface" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+</button>
+</div>
 </nav>
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu" class="fixed inset-0 z-[60] bg-surface/95 backdrop-blur-md hidden flex-col items-center justify-center gap-10">
+<button id="close-menu" class="absolute top-5 right-6" aria-label="Close menu">
+<svg class="w-8 h-8 text-on-surface" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+</button>
+<a class="text-2xl font-headline font-bold text-secondary" href="index.html">Home</a>
+<a class="text-2xl font-headline font-bold text-on-surface" href="projects.html">Projects</a>
+<a class="text-2xl font-headline font-bold text-secondary" href="about.html">About</a>
+</div>
+<main id="main-content" class="pt-32">
 
-  <section class="hero">
-    <div class="container">
-      <h1 class="display-4">Featured Projects</h1>
-      <p class="lead">Work demonstrating how I build new capabilities in complex environments from concept through scale.</p>
-      <p>Full CV available on <a href="https://www.linkedin.com/in/karenschoellkopf/"><b>LinkedIn</b></a></p>
-      <hr>
-      <br>
-      <div class="project">
-        <h2>Leap Fund: Building a National Platform for Benefits Cliff Intervention</h2>
-        <p><i>Fintech nonprofit addressing the benefits cliff problem (2018-2024)</i></p>
-        <p><b>The Challenge</b></p>
-        <p>Benefits cliffs (where earning more income results in losing public benefits worth more than the wage increase) trap millions of Americans in poverty. No technology platform existed to help workers navigate this complexity, and no proven interventions existed to help employers support workers without triggering cliffs. The solution required combining financial technology, deep domain expertise of multiple industries, employer partnerships, policy advocacy, and behavioral design.</p>
-        <p><b>My Role</b></p>
-        <p>Founder &amp; CEO. Built the organization from concept, raised $2M+ in competitive non-profit funding, led product development, established employer partnerships, managed team, and drove policy impact.</p>
-        <p><b>The Approach</b></p>
-        <p>Designed a multi-layered intervention system:</p>
-        <ul>
-          <li>Built a benefits cliff calculator enabling workers to model earning scenarios and understand their specific cliff risks</li>
-          <li>Created a coach training program to scale human support nationwide, and provide workers real context for tricky decision-making processes they were navigating for career and finances</li>
-          <li>Piloted employer-based financial solutions with multi-year partnerships to test intervention models</li>
-          <li>Established a product-to-policy pipeline, using program data to inform federal and state policy recommendations</li>
-        </ul>
-        <p>Rather than choosing between tech or human support, policy or product, we built an integrated system recognizing that benefits cliffs require solutions across all these domains.</p>
-        <div class="highlight-box">
-        <p><b>The Outcome</b></p>
-        <p>Scaled to become one of the nation's most robust benefits cliff intervention programs. Testified before U.S. House Rules Committee. Presented program outcomes at Federal Reserve Bank of Atlanta. Established partnerships with multiple state agencies and Chambers of Commerce. Supported by Blue Ridge Labs/Robin Hood Foundation, Acumen, Access Ventures, The Workers Lab, Financial Solutions Lab at the Financial Health Network, and Google for Startups. One of only 2 surviving organizations from a 20+ member cohort.</p>
-        </div>
-        </div>
-      <br>
-      <hr>
-      <br>
-      <div class="project">
-        <h2>GameTime: Modern League Management for Rec Hockey</h2>
-        <p><i>Product Lead &amp; Builder (2025–present) | Work in Progress</i></p>
-        <p><b>The Challenge</b></p>
-        <p>Adult recreational hockey leagues run on a patchwork of group texts, spreadsheets, and outdated software with clunky UX and limited league-level tools. My wife is a goalie in two NYC rec leagues, and is also an accomplished product manager and designer. She had been frustrated with the existing tools her leagues have used for years, and knew from talking to league commissioners and team managers that the feeling was universal. I heard her complaints loud and clear, and I believed that we could do better.</p>
-        <p><b>My Role</b></p>
-        <p>Designing and building GameTime end-to-end: product strategy, architecture, and all code. My wife is co-founder and design lead, bringing firsthand domain expertise as a player and structured UX methodology as a designer.</p>
-        <p><b>The Approach</b></p>
-        <ul>
-          <li>Building with Claude as an AI co-pilot: I drive all product and design decisions while using Claude to accelerate full-stack development, from database schema to production deployment</li>
-          <li>Next.js, TypeScript, PostgreSQL, Prisma, Supabase Auth, Tailwind CSS, deployed on Vercel: a modern stack chosen for speed to ship and ease of two-person team maintenance</li>
-          <li>Building for a user base we know personally: my wife's leagues are our design partners, and their real workflows drive every feature decision</li>
-        </ul>
-        <div class="highlight-box">
-        <p><b>Where It Stands</b></p>
-        <p>Core platform is functional and deployed: team and league creation, roster management, game scheduling, RSVP with email reminders, goalie pool management, and role-based permissions for players, team managers, and league commissioners. Currently in closed QA, refining the experience based on a formal UX review before opening to our beachhead league for beta.</p>
-        </div>
-      </div>
-      <br>
-      <hr>
-      <br>
-      <div class="project">
-        <h2>Vote Run Lead: Digital Transformation for Political Training</h2>
-        <p><i>Chief Product Officer (2015-2016)</i></p>
-        <p><b>The Challenge</b></p>
-        <p>Vote Run Lead's training programs for women running for office relied on in-person events, limiting reach and creating equity barriers. The organization worked nationally, but needed greater scale while maintaining training quality, while also needing to stabilize compromised systems and address a lack of product infrastructure.</p>
-        <p><b>My Role</b></p>
-        <p>Chief Product Officer. Led complete digital transformation including platform strategy, security remediation, and revenue system implementation.</p>
-        <p>The Approach</p>
-        <ul>
-          <li>Re-designed and launched Invitation Nation, a peer-to-peer platform encouraging women to run for office</li>
-          <li>Rebuilt compromised systems and established security infrastructure and QA processes</li>
-          <li>Implemented payments gateway, donations flow, and merchandise sales to diversify revenue</li>
-          <li>Built lean external tech team and established sustainable product development processes</li>
-        </ul>
-        <div class="highlight-box">
-        <p><b>The Outcome</b></p>
-        <p>Enabled Vote Run Lead to scale training programs nationally, reaching thousands more women while reducing per-trainee costs. Created infrastructure that supported the organization's growth through subsequent election cycles.</p>
-        </div>
-      </div>
-      <br>
-      <hr>
-      <br>
-      <div class="project">
-        <h2>WalkaboutNYC: Building NYC's Tech Community</h2>
-        <p><i>Product Lead (2010-2013)</i></p>
-        <P><b>The Challenge</b></P>
-        <p>In 2010, NYC's tech ecosystem was nascent and fragmented. Companies and workers lacked ways to discover each other, and the community needed connective tissue to appreciate their own local talent and products, and accelerate growth in the sector.</p>
-        <p><b>My Role</b></p>
-        <p>Built and scaled WalkaboutNYC, a biannual open house event where hundreds of tech companies opened their doors simultaneously for thousands of participants to explore.</p>
-        <p><b>The Approach</b></p>
-        <ul>
-          <li>Built a mobile-first platform (novel at the time) with custom RSVP functionality, backend database, and user-facing CMS</li>
-          <li>Managed full product lifecycle from QA through public rollout</li>
-          <li>Created operational infrastructure to coordinate hundreds of companies across NYC simultaneously</li>
-        </ul>
-      <div class="highlight-box">
-      <p><b>The Outcome</b></p>
-      <p>Grew to biannual event with hundreds of participating companies and thousands of attendees. Created alternate event for design studios and designers, based on original event success. Became foundational community-building infrastructure for NYC tech ecosystem during critical growth years. Opensourced the idea and created documentation for plug-and-play handbook which was implemented in numerous other cities around the globe.</p>
-        </div>
-      </div>
-      <br>
-      <hr>
-      <br>
-    <h1>Additional Work</h1>
-      <br>
-      <hr>
-      <br>
-      <div class="project">
-        <h2>Fortune 500 &amp; Enterprise Strategy Consulting</h2>
-        <p>Led digital transformation and product strategy projects for Fortune 500 clients (Samsung, Verizon, Target, Cadillac, Bloomin Brands) and high-growth tech companies (Spotify, Grammarly, Meetup). Specialized in product strategy, community and user research, competitive analysis, and strategic roadmaps that accelerated innovation initiatives across automotive, healthcare, retail, and hospitality sectors.</p>
-      </div>
-      <br>
-      <div class="project">
-        <h2>Hire More Women In Tech</h2>
-        <p>Launched initiative in 2014 making the business case for diverse leadership in technology. Campaign expanded beyond original scope to address broader diversity and inclusion. Relaunched in 2025 with expanded focus, and to address federal DEI rollbacks.</p>
-      </div>
-      <br>
-      <div class="project">
-        <h2>realnames.online</h2>
-        <p>Collaborative public interest project with K Samarskaya examining "real name" policies on social platforms—their history, risks to user safety, and impact on freedom of expression.</p>
-      </div>
-      <br>
-      <hr>
-      <br>
-    <h1>Thought Leadership</h1>
-      <br>
-      <hr>
-      <br>
-      <div class="project">
-      <h2>Speaking Engagements</h2>
-      <p>Selected speaking engagements on benefits cliffs, fintech, and policy innovation</p>
-        <ul>
-          <li>House Committee on Rules (2021), Ending Hunger in America: A Conversation about Benefit Cliffs</li>
-          <li>Federal Reserve Bank of Atlanta (2019), Summit on the Economics and Policies of Cliffs in the Social Safety Net and Economic Mobility</li>
-          <li>The Aspen Institute Financial Security Program (2022), Benefits21 Leadership Forum</li>
-          <li>CirclesUSA National Conference (2021, 2023)</li>
-          <li>ECS Forum on Justice and Opportunity (2019, 2020, 2021, 2022)</li>
-          <li>Compass Working Capital National FSS Conference (2022)</li>
-          <li>NYS CDFI Conference (2019)</li>
-          <li>Ideas42 Behavioral Summit (2018)</li>
-        </ul>
-      <h2>Selected Publications &amp; Media</h2>
-        <ul>
-          <li><b>2025 Report</b>: <a href="https://myleapfund.com/employer-report-2025/">Employers &amp; Benefits Cliffs: Five Years of Field Learnings</a>: Comprehensive Leap Fund report on employer-based benefits cliff interventions</li>
-          <li><b>Congressional testimony</b>: <a href="https://rules.house.gov/sites/evo-subsites/republicans-rules.house.gov/files/HRDT-RU00-117-WState-SchoellkopfK-20211013.pdf">Written testimony</a> for U.S. House Committee on Rules (2021)</li>
-          <li><b>Op ed</b>: <a href="https://www.nydailynews.com/2022/03/26/why-ny-needs-a-universal-child-care-plan">Why N.Y. needs a universal childcare plan</a>, Daily News (2022)</li>
-          <li><b>Research contributor</b>: <a href="https://chamber-foundation.files.svdcdn.com/production/documents/USCCF_BenefitsCliffsBrochure_Digital.pdf?dm=1694110498">U.S. Chamber of Commerce Research Foundation</a> (2022), <a href="https://finhealthnetwork.org/research/the-benefits-cliff-dilemma-navigating-wage-increases-and-public-benefits">The Financial Health Network</a> (2023)</li>
-          <li><b>Podcast interviews</b>: <a href="https://open.spotify.com/episode/4qYCYvDhqkfBHm6K77elwq?si=QcJJZ2L6SpmdcSyZpATnEw&nd=1&dlsi=a1d98a1671cf4ec1">More Than Profit</a> (2024), <a href="https://myleapfund.com/news/2022/2/28/narativ-story-talks-a-podcast-interview-with-leap-fund">Narativ StoryTalks</a> (2022)</li>
-          <li><b>Featured in</b> The New York Times, The Philadelphia Tribune, The Counter, and others</li>
-        </ul>
-        <p>Complete publication list on <a href="https://www.linkedin.com/in/karenschoellkopf"><b>LinkedIn</b></a></p>
-      </div>
-    </div>
-  </section>
-  <footer>
-    <div class="container">
-      <p>Made with ❤️ in Brooklyn</p>
-      <p>&copy; 2025 Karen Schoellkopf</p>
-    </div>
-  </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+<!-- Page Header -->
+<section class="max-w-5xl mx-auto px-6 mb-20">
+<h1 class="section-heading font-headline font-extrabold text-on-surface mb-4 anim d1">Featured projects</h1>
+<p class="text-lg md:text-xl font-body font-light text-secondary leading-relaxed mb-6 anim d2">Selected case studies</p>
+<div class="anim d3">
+<a class="text-sm font-body font-bold text-on-surface hover:text-coral-accent transition-colors flex items-center gap-2 group" href="https://www.linkedin.com/in/karenschoellkopf/" target="_blank" rel="noopener">
+Full CV on LinkedIn <span class="group-hover:translate-x-1 transition-transform">→</span>
+</a>
+</div>
+</section>
+
+<!-- Divider -->
+<div class="max-w-5xl mx-auto px-6">
+<div class="w-full h-[1px] bg-outline-variant mb-20 divider-anim"></div>
+</div>
+
+<!-- ==================== -->
+<!-- CASE STUDY: Leap Fund -->
+<!-- ==================== -->
+<section class="max-w-5xl mx-auto px-6 mb-20 reveal">
+<div class="mb-8">
+<h2 class="section-heading font-headline font-extrabold text-on-surface mb-3">Leap Fund: Building a national platform for benefits cliff intervention</h2>
+<p class="text-xs font-label uppercase tracking-[0.2em] text-primary font-bold">Founder &amp; CEO (2018–2024) · Fintech Nonprofit</p>
+</div>
+
+<!-- Setup: Challenge + Role -->
+<div class="max-w-3xl space-y-12 mb-16">
+<div>
+<p class="text-xs font-label uppercase tracking-[0.15em] text-secondary font-bold mb-4">The challenge</p>
+<p class="text-lg font-body font-light text-secondary leading-relaxed">Benefits cliffs (where earning more income results in losing public benefits worth more than the wage increase) trap millions of Americans in poverty. No technology platform existed to help workers navigate this complexity, and no proven interventions existed to help employers support workers without triggering cliffs. The solution required combining financial technology, deep domain expertise of multiple industries, employer partnerships, policy advocacy, and behavioral design.</p>
+</div>
+<div>
+<p class="text-xs font-label uppercase tracking-[0.15em] text-secondary font-bold mb-4">My role</p>
+<p class="text-lg font-body font-light text-secondary leading-relaxed">Founder &amp; CEO. Built the organization from concept, raised $2M+ in competitive non-profit funding, led product development, established employer partnerships, managed team, and drove policy impact.</p>
+</div>
+</div>
+
+<!-- Side by side: Approach + Outcome -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+<div>
+<p class="text-xs font-label uppercase tracking-[0.15em] text-primary font-bold mb-6">My approach</p>
+<p class="text-base font-body font-light text-secondary leading-relaxed mb-6">Designed a multi-layered intervention system:</p>
+<ul class="space-y-5" role="list">
+<li class="flex gap-4 items-start">
+<span class="w-6 h-[1px] bg-primary mt-3 shrink-0"></span>
+<p class="text-base font-body font-light text-secondary">Built a benefits cliff calculator enabling workers to model earning scenarios and understand their specific cliff risks</p>
+</li>
+<li class="flex gap-4 items-start">
+<span class="w-6 h-[1px] bg-primary mt-3 shrink-0"></span>
+<p class="text-base font-body font-light text-secondary">Created a coach training program to scale human support nationwide, and provide workers real context for tricky decision-making processes they were navigating for career and finances</p>
+</li>
+<li class="flex gap-4 items-start">
+<span class="w-6 h-[1px] bg-primary mt-3 shrink-0"></span>
+<p class="text-base font-body font-light text-secondary">Piloted employer-based financial solutions with multi-year partnerships to test intervention models</p>
+</li>
+<li class="flex gap-4 items-start">
+<span class="w-6 h-[1px] bg-primary mt-3 shrink-0"></span>
+<p class="text-base font-body font-light text-secondary">Established a product-to-policy pipeline, using program data to inform federal and state policy recommendations</p>
+</li>
+</ul>
+<p class="text-base font-body font-light text-secondary leading-relaxed mt-6">Rather than choosing between tech or human support, policy or product, we built an integrated system recognizing that benefits cliffs require solutions across all these domains.</p>
+</div>
+<div>
+<p class="text-xs font-label uppercase tracking-[0.15em] text-primary font-bold mb-6">The outcome</p>
+<ul class="space-y-5" role="list">
+<li class="flex gap-4 items-start">
+<span class="w-6 h-[1px] bg-primary mt-3 shrink-0"></span>
+<p class="text-base font-body font-light text-secondary">Scaled to become one of the nation's most robust benefits cliff intervention programs</p>
+</li>
+<li class="flex gap-4 items-start">
+<span class="w-6 h-[1px] bg-primary mt-3 shrink-0"></span>
+<p class="text-base font-body font-light text-secondary">Testified before U.S. House Rules Committee</p>
+</li>
+<li class="flex gap-4 items-start">
+<span class="w-6 h-[1px] bg-primary mt-3 shrink-0"></span>
+<p class="text-base font-body font-light text-secondary">Presented program outcomes at Federal Reserve Bank of Atlanta</p>
+</li>
+<li class="flex gap-4 items-start">
+<span class="w-6 h-[1px] bg-primary mt-3 shrink-0"></span>
+<p class="text-base font-body font-light text-secondary">Established partnerships with multiple state agencies and Chambers of Commerce</p>
+</li>
+<li class="flex gap-4 items-start">
+<span class="w-6 h-[1px] bg-primary mt-3 shrink-0"></span>
+<p class="text-base font-body font-light text-secondary">Supported by Blue Ridge Labs/Robin Hood Foundation, Acumen, Access Ventures, The Workers Lab, Financial Solutions Lab at the Financial Health Network, and Google for Startups</p>
+</li>
+<li class="flex gap-4 items-start">
+<span class="w-6 h-[1px] bg-primary mt-3 shrink-0"></span>
+<p class="text-base font-body font-light text-secondary">One of only 2 surviving organizations from a 20+ member cohort</p>
+</li>
+</ul>
+</div>
+</div>
+</section>
+
+<!-- Divider -->
+<div class="max-w-5xl mx-auto px-6">
+<div class="w-full h-[1px] bg-outline-variant mb-20 divider-anim"></div>
+</div>
+
+<!-- ========================= -->
+<!-- CASE STUDY: Vote Run Lead -->
+<!-- ========================= -->
+<section class="max-w-5xl mx-auto px-6 mb-20 reveal">
+<div class="mb-8">
+<h2 class="section-heading font-headline font-extrabold text-on-surface mb-3">Vote Run Lead: Digital transformation for political training</h2>
+<p class="text-xs font-label uppercase tracking-[0.2em] text-primary font-bold">Chief Product Officer (2015–2016) · Civic Tech Nonprofit</p>
+</div>
+
+<!-- Setup: Challenge + Role -->
+<div class="max-w-3xl space-y-12 mb-16">
+<div>
+<p class="text-xs font-label uppercase tracking-[0.15em] text-secondary font-bold mb-4">The challenge</p>
+<p class="text-lg font-body font-light text-secondary leading-relaxed">Vote Run Lead's training programs for women running for office relied on in-person events, limiting reach and creating equity barriers. The organization worked nationally, but needed greater scale while maintaining training quality, while also needing to stabilize compromised systems and address a lack of product infrastructure.</p>
+</div>
+<div>
+<p class="text-xs font-label uppercase tracking-[0.15em] text-secondary font-bold mb-4">My role</p>
+<p class="text-lg font-body font-light text-secondary leading-relaxed">Chief Product Officer. Led complete digital transformation including platform strategy, security remediation, and revenue system implementation.</p>
+</div>
+</div>
+
+<!-- Side by side: Approach + Outcome -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+<div>
+<p class="text-xs font-label uppercase tracking-[0.15em] text-primary font-bold mb-6">My approach</p>
+<ul class="space-y-5" role="list">
+<li class="flex gap-4 items-start">
+<span class="w-6 h-[1px] bg-primary mt-3 shrink-0"></span>
+<p class="text-base font-body font-light text-secondary">Re-designed and launched Invitation Nation, a peer-to-peer platform encouraging women to run for office</p>
+</li>
+<li class="flex gap-4 items-start">
+<span class="w-6 h-[1px] bg-primary mt-3 shrink-0"></span>
+<p class="text-base font-body font-light text-secondary">Rebuilt compromised systems and established security infrastructure and QA processes</p>
+</li>
+<li class="flex gap-4 items-start">
+<span class="w-6 h-[1px] bg-primary mt-3 shrink-0"></span>
+<p class="text-base font-body font-light text-secondary">Implemented payments gateway, donations flow, and merchandise sales to diversify revenue</p>
+</li>
+<li class="flex gap-4 items-start">
+<span class="w-6 h-[1px] bg-primary mt-3 shrink-0"></span>
+<p class="text-base font-body font-light text-secondary">Built lean external tech team and established sustainable product development processes</p>
+</li>
+<li class="flex gap-4 items-start">
+<span class="w-6 h-[1px] bg-primary mt-3 shrink-0"></span>
+<p class="text-base font-body font-light text-secondary">Brought operational rigor to product development and external communications</p>
+</li>
+</ul>
+</div>
+<div>
+<p class="text-xs font-label uppercase tracking-[0.15em] text-primary font-bold mb-6">The outcome</p>
+<ul class="space-y-5" role="list">
+<li class="flex gap-4 items-start">
+<span class="w-6 h-[1px] bg-primary mt-3 shrink-0"></span>
+<p class="text-base font-body font-light text-secondary">Scaled training programs nationally, reaching thousands more women while reducing per-trainee costs</p>
+</li>
+<li class="flex gap-4 items-start">
+<span class="w-6 h-[1px] bg-primary mt-3 shrink-0"></span>
+<p class="text-base font-body font-light text-secondary">Created infrastructure that supported the organization's growth through subsequent election cycles</p>
+</li>
+</ul>
+</div>
+</div>
+</section>
+
+<!-- Divider -->
+<div class="max-w-5xl mx-auto px-6">
+<div class="w-full h-[1px] bg-outline-variant mb-20 divider-anim"></div>
+</div>
+
+<!-- ========================= -->
+<!-- CASE STUDY: WalkaboutNYC -->
+<!-- ========================= -->
+<section class="max-w-5xl mx-auto px-6 mb-20 reveal">
+<div class="mb-8">
+<h2 class="section-heading font-headline font-extrabold text-on-surface mb-3">WalkaboutNYC: Building NYC's tech community</h2>
+<p class="text-xs font-label uppercase tracking-[0.2em] text-primary font-bold">Product Lead (2010–2013)</p>
+</div>
+
+<!-- Setup: Challenge + Role -->
+<div class="max-w-3xl space-y-12 mb-16">
+<div>
+<p class="text-xs font-label uppercase tracking-[0.15em] text-secondary font-bold mb-4">The challenge</p>
+<p class="text-lg font-body font-light text-secondary leading-relaxed">In 2010, NYC's tech ecosystem was nascent and fragmented. Companies and workers lacked ways to discover each other, and the community needed connective tissue to appreciate their own local talent and products, and accelerate growth in the sector.</p>
+</div>
+<div>
+<p class="text-xs font-label uppercase tracking-[0.15em] text-secondary font-bold mb-4">My role</p>
+<p class="text-lg font-body font-light text-secondary leading-relaxed">Built and scaled WalkaboutNYC, a biannual open house event where hundreds of tech companies opened their doors simultaneously for thousands of participants to explore.</p>
+</div>
+</div>
+
+<!-- Side by side: Approach + Outcome -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+<div>
+<p class="text-xs font-label uppercase tracking-[0.15em] text-primary font-bold mb-6">My approach</p>
+<ul class="space-y-5" role="list">
+<li class="flex gap-4 items-start">
+<span class="w-6 h-[1px] bg-primary mt-3 shrink-0"></span>
+<p class="text-base font-body font-light text-secondary">Built a mobile-first platform (novel at the time) with custom RSVP functionality, backend database, and user-facing CMS</p>
+</li>
+<li class="flex gap-4 items-start">
+<span class="w-6 h-[1px] bg-primary mt-3 shrink-0"></span>
+<p class="text-base font-body font-light text-secondary">Managed full product lifecycle from QA through public rollout</p>
+</li>
+<li class="flex gap-4 items-start">
+<span class="w-6 h-[1px] bg-primary mt-3 shrink-0"></span>
+<p class="text-base font-body font-light text-secondary">Created operational infrastructure to coordinate hundreds of companies across NYC simultaneously</p>
+</li>
+</ul>
+</div>
+<div>
+<p class="text-xs font-label uppercase tracking-[0.15em] text-primary font-bold mb-6">The outcome</p>
+<ul class="space-y-5" role="list">
+<li class="flex gap-4 items-start">
+<span class="w-6 h-[1px] bg-primary mt-3 shrink-0"></span>
+<p class="text-base font-body font-light text-secondary">Grew to biannual event with hundreds of participating companies and thousands of attendees</p>
+</li>
+<li class="flex gap-4 items-start">
+<span class="w-6 h-[1px] bg-primary mt-3 shrink-0"></span>
+<p class="text-base font-body font-light text-secondary">Created alternate event for design studios and designers, based on original event success</p>
+</li>
+<li class="flex gap-4 items-start">
+<span class="w-6 h-[1px] bg-primary mt-3 shrink-0"></span>
+<p class="text-base font-body font-light text-secondary">Became foundational community-building infrastructure for NYC tech ecosystem during critical growth years</p>
+</li>
+<li class="flex gap-4 items-start">
+<span class="w-6 h-[1px] bg-primary mt-3 shrink-0"></span>
+<p class="text-base font-body font-light text-secondary">Opensourced the idea and created plug-and-play handbook implemented in numerous other cities around the globe</p>
+</li>
+</ul>
+</div>
+</div>
+</section>
+
+<!-- Divider -->
+<div class="max-w-5xl mx-auto px-6">
+<div class="w-full h-[1px] bg-outline-variant mb-20 divider-anim"></div>
+</div>
+
+<!-- ================= -->
+<!-- ADDITIONAL WORK -->
+<!-- ================= -->
+<section class="max-w-5xl mx-auto px-6 mb-20 reveal">
+<h2 class="section-heading font-headline font-extrabold text-on-surface mb-16">Additional work</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
+<div class="space-y-6 md:pr-4">
+<div class="flex items-center gap-3">
+<div class="w-1.5 h-6 bg-coral-accent"></div>
+<h3 class="text-2xl font-headline font-bold">GameTime</h3>
+</div>
+<p class="text-xs font-label uppercase tracking-[0.2em] text-primary font-bold mb-1">Product Lead &amp; Cofounder (2025–present)</p>
+<p class="text-lg font-body font-light text-secondary leading-relaxed">Modern league management platform for rec hockey, built with my wife (co-founder and design lead) who brought years of frustration as a player and sharp UX instincts as a designer. I lead product strategy, architecture, and all code, using Claude as an AI co-pilot to accelerate full-stack development. Core platform is functional and deployed, currently in closed QA ahead of beta.</p>
+</div>
+<div class="space-y-6 md:pl-4">
+<div class="flex items-center gap-3">
+<div class="w-1.5 h-6 bg-coral-accent"></div>
+<h3 class="text-2xl font-headline font-bold">Fortune 500 &amp; enterprise</h3>
+</div>
+<p class="text-xs font-label uppercase tracking-[0.2em] text-primary font-bold mb-1">Strategy Consultant (2014–2018)</p>
+<p class="text-lg font-body font-light text-secondary leading-relaxed">Product and growth strategy consulting for Samsung, Verizon, Target, Spotify, Meetup, and others. Projects ranged from developing a unified customer support strategy for a major consumer electronics brand to competitive analysis of corporate innovation programs, new user onboarding research, and community and platform strategy.</p>
+</div>
+<div class="space-y-6 md:pr-4">
+<div class="flex items-center gap-3">
+<div class="w-1.5 h-6 bg-coral-accent"></div>
+<h3 class="text-2xl font-headline font-bold">Hire More Women In Tech</h3>
+</div>
+<p class="text-xs font-label uppercase tracking-[0.2em] text-primary font-bold mb-1">Creator (2014–present)</p>
+<p class="text-lg font-body font-light text-secondary leading-relaxed">A one-pager site making the business case for diverse leadership in technology, launched in 2014. Campaign expanded beyond original scope to address broader diversity and inclusion. Relaunched in 2025 with expanded focus, addressing federal DEI rollbacks (<a href="https://www.hiremorewomenintech.com/" target="_blank" rel="noopener" class="text-on-surface font-bold border-b border-transparent hover:text-coral-accent hover:border-coral-accent pb-0.5 transition-all">Hire More Women In Tech</a>).</p>
+</div>
+<div class="space-y-6 md:pl-4">
+<div class="flex items-center gap-3">
+<div class="w-1.5 h-6 bg-coral-accent"></div>
+<h3 class="text-2xl font-headline font-bold">realnames.online</h3>
+</div>
+<p class="text-xs font-label uppercase tracking-[0.2em] text-primary font-bold mb-1">Collaborator (2017–2022)</p>
+<p class="text-lg font-body font-light text-secondary leading-relaxed">Collaborative project about unsafe identity defaults with K Samarskaya, examining "real name" policies on social platforms, their history, risks to user safety, and impact on freedom of expression (no longer active but viewable on the <a href="https://web.archive.org/web/20230926122610/https://realnames.online/" target="_blank" rel="noopener" class="text-on-surface font-bold border-b border-transparent hover:text-coral-accent hover:border-coral-accent pb-0.5 transition-all">Wayback Machine</a>).</p>
+</div>
+</div>
+</section>
+
+<!-- Divider -->
+<div class="max-w-5xl mx-auto px-6">
+<div class="w-full h-[1px] bg-outline-variant mb-20 divider-anim"></div>
+</div>
+
+<!-- ==================== -->
+<!-- THOUGHT LEADERSHIP -->
+<!-- ==================== -->
+<section class="max-w-5xl mx-auto px-6 mb-32 md:mb-[100px] reveal">
+<h2 class="section-heading font-headline font-extrabold text-on-surface mb-12">Thought leadership</h2>
+
+<!-- Speaking Engagements -->
+<div class="mb-16">
+<p class="text-xs font-label uppercase tracking-[0.15em] text-secondary font-bold mb-8">Speaking engagements</p>
+<ul class="space-y-5" role="list">
+<li class="flex gap-6 items-start">
+<span class="w-8 h-[1px] bg-primary mt-4 shrink-0"></span>
+<p class="text-lg font-body font-light text-secondary">House Committee on Rules (2021), Ending Hunger in America: A Conversation about Benefit Cliffs</p>
+</li>
+<li class="flex gap-6 items-start">
+<span class="w-8 h-[1px] bg-primary mt-4 shrink-0"></span>
+<p class="text-lg font-body font-light text-secondary">Federal Reserve Bank of Atlanta (2019), Summit on the Economics and Policies of Cliffs in the Social Safety Net and Economic Mobility</p>
+</li>
+<li class="flex gap-6 items-start">
+<span class="w-8 h-[1px] bg-primary mt-4 shrink-0"></span>
+<p class="text-lg font-body font-light text-secondary">The Aspen Institute Financial Security Program (2022), Benefits21 Leadership Forum</p>
+</li>
+<li class="flex gap-6 items-start">
+<span class="w-8 h-[1px] bg-primary mt-4 shrink-0"></span>
+<p class="text-lg font-body font-light text-secondary">CirclesUSA National Conference (2021, 2023)</p>
+</li>
+<li class="flex gap-6 items-start">
+<span class="w-8 h-[1px] bg-primary mt-4 shrink-0"></span>
+<p class="text-lg font-body font-light text-secondary">ECS Forum on Justice and Opportunity (2019, 2020, 2021, 2022)</p>
+</li>
+<li class="flex gap-6 items-start">
+<span class="w-8 h-[1px] bg-primary mt-4 shrink-0"></span>
+<p class="text-lg font-body font-light text-secondary">Compass Working Capital National FSS Conference (2022)</p>
+</li>
+<li class="flex gap-6 items-start">
+<span class="w-8 h-[1px] bg-primary mt-4 shrink-0"></span>
+<p class="text-lg font-body font-light text-secondary">NYS CDFI Conference (2019)</p>
+</li>
+<li class="flex gap-6 items-start">
+<span class="w-8 h-[1px] bg-primary mt-4 shrink-0"></span>
+<p class="text-lg font-body font-light text-secondary">Ideas42 Behavioral Summit (2018)</p>
+</li>
+</ul>
+</div>
+
+<!-- Publications & Media -->
+<div>
+<p class="text-xs font-label uppercase tracking-[0.15em] text-secondary font-bold mb-8">Selected publications &amp; media</p>
+<ul class="space-y-5" role="list">
+<li class="flex gap-6 items-start">
+<span class="w-8 h-[1px] bg-primary mt-4 shrink-0"></span>
+<p class="text-lg font-body font-light text-secondary"><span class="text-on-surface font-bold">2025 Report</span>: <a href="https://myleapfund.com/employer-report-2025/" target="_blank" rel="noopener" class="text-on-surface font-bold border-b border-transparent hover:text-coral-accent hover:border-coral-accent pb-0.5 transition-all">Employers &amp; Benefits Cliffs: Five Years of Field Learnings</a>: Comprehensive Leap Fund report on employer-based benefits cliff interventions</p>
+</li>
+<li class="flex gap-6 items-start">
+<span class="w-8 h-[1px] bg-primary mt-4 shrink-0"></span>
+<p class="text-lg font-body font-light text-secondary"><span class="text-on-surface font-bold">Congressional testimony</span>: <a href="https://rules.house.gov/sites/evo-subsites/republicans-rules.house.gov/files/HRDT-RU00-117-WState-SchoellkopfK-20211013.pdf" target="_blank" rel="noopener" class="text-on-surface font-bold border-b border-transparent hover:text-coral-accent hover:border-coral-accent pb-0.5 transition-all">Written testimony</a> for U.S. House Committee on Rules (2021)</p>
+</li>
+<li class="flex gap-6 items-start">
+<span class="w-8 h-[1px] bg-primary mt-4 shrink-0"></span>
+<p class="text-lg font-body font-light text-secondary"><span class="text-on-surface font-bold">Op ed</span>: <a href="https://www.nydailynews.com/opinion/ny-oped-ny-needs-universal-child-care-20220326-k7az6bob3netplxfr5sdeduzva-story.html" target="_blank" rel="noopener" class="text-on-surface font-bold border-b border-transparent hover:text-coral-accent hover:border-coral-accent pb-0.5 transition-all">Why N.Y. needs a universal childcare plan</a>, Daily News, 2022 (<a href="https://drive.google.com/file/d/1TUmVUlw1vn8uY5auoYozwt68SgdrkSs1/view?usp=sharing" target="_blank" rel="noopener" class="text-on-surface font-bold border-b border-transparent hover:text-coral-accent hover:border-coral-accent pb-0.5 transition-all">accessible version</a>)</p>
+</li>
+<li class="flex gap-6 items-start">
+<span class="w-8 h-[1px] bg-primary mt-4 shrink-0"></span>
+<p class="text-lg font-body font-light text-secondary"><span class="text-on-surface font-bold">Research contributor</span>: <a href="https://chamber-foundation.files.svdcdn.com/production/documents/USCCF_BenefitsCliffsBrochure_Digital.pdf?dm=1694110498" target="_blank" rel="noopener" class="text-on-surface font-bold border-b border-transparent hover:text-coral-accent hover:border-coral-accent pb-0.5 transition-all">U.S. Chamber of Commerce Research Foundation</a> (2022), <a href="https://finhealthnetwork.org/research/the-benefits-cliff-dilemma-navigating-wage-increases-and-public-benefits" target="_blank" rel="noopener" class="text-on-surface font-bold border-b border-transparent hover:text-coral-accent hover:border-coral-accent pb-0.5 transition-all">The Financial Health Network</a> (2023)</p>
+</li>
+<li class="flex gap-6 items-start">
+<span class="w-8 h-[1px] bg-primary mt-4 shrink-0"></span>
+<p class="text-lg font-body font-light text-secondary"><span class="text-on-surface font-bold">Podcast interviews</span>: <a href="https://open.spotify.com/episode/4qYCYvDhqkfBHm6K77elwq?si=QcJJZ2L6SpmdcSyZpATnEw&nd=1&dlsi=a1d98a1671cf4ec1" target="_blank" rel="noopener" class="text-on-surface font-bold border-b border-transparent hover:text-coral-accent hover:border-coral-accent pb-0.5 transition-all">More Than Profit</a> (2024), <a href="https://myleapfund.com/news/2022/2/28/narativ-story-talks-a-podcast-interview-with-leap-fund" target="_blank" rel="noopener" class="text-on-surface font-bold border-b border-transparent hover:text-coral-accent hover:border-coral-accent pb-0.5 transition-all">Narativ StoryTalks</a> (2022)</p>
+</li>
+<li class="flex gap-6 items-start">
+<span class="w-8 h-[1px] bg-primary mt-4 shrink-0"></span>
+<p class="text-lg font-body font-light text-secondary"><span class="text-on-surface font-bold">Featured in</span> The New York Times, The Philadelphia Tribune, The Counter, and others</p>
+</li>
+</ul>
+<div class="mt-10">
+<a class="text-lg font-body font-bold text-on-surface hover:text-coral-accent transition-colors flex items-center gap-2 group" href="https://www.linkedin.com/in/karenschoellkopf/" target="_blank" rel="noopener">
+Complete publication list on LinkedIn <span class="group-hover:translate-x-1 transition-transform">→</span>
+</a>
+</div>
+</div>
+</section>
+
+</main>
+<!-- Contact Modal -->
+<div id="contact-modal" class="fixed inset-0 z-[70] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-label="Contact form">
+<div id="contact-backdrop" class="absolute inset-0 bg-on-surface/40 backdrop-blur-sm"></div>
+<div class="relative bg-surface w-full max-w-lg mx-auto p-8 md:p-12 rounded-[6px] shadow-xl max-h-[90vh] overflow-y-auto">
+<button id="contact-close" class="absolute top-4 right-4" aria-label="Close contact form">
+<svg class="w-6 h-6 text-secondary hover:text-on-surface transition-colors" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+</button>
+<h2 class="text-2xl font-headline font-bold text-on-surface mb-3">Get in touch</h2>
+<form id="contact-form">
+<div id="contact-fields" class="space-y-6">
+<input type="hidden" name="access_key" value="efe933d5-a3e5-4937-9f97-fed7bc1cd02f">
+<input type="hidden" name="subject" value="Your message to Karen Schoellkopf">
+<input type="checkbox" name="botcheck" class="hidden" style="display:none">
+<div>
+<label for="contact-name" class="block text-xs font-label uppercase tracking-[0.15em] text-secondary font-bold mb-2">Name</label>
+<input id="contact-name" name="name" type="text" required class="w-full bg-transparent border-b-2 border-outline-variant focus:border-primary focus:ring-0 focus:outline-none text-base font-body px-2 py-3 transition-all duration-300" placeholder=" Your name">
+</div>
+<div>
+<label for="contact-email" class="block text-xs font-label uppercase tracking-[0.15em] text-secondary font-bold mb-2">Email</label>
+<input id="contact-email" name="email" type="email" required class="w-full bg-transparent border-b-2 border-outline-variant focus:border-primary focus:ring-0 focus:outline-none text-base font-body px-2 py-3 transition-all duration-300" placeholder=" your@email.com">
+</div>
+<div>
+<label for="contact-message" class="block text-xs font-label uppercase tracking-[0.15em] text-secondary font-bold mb-2">Message</label>
+<textarea id="contact-message" name="message" required rows="4" class="w-full bg-transparent border-b-2 border-outline-variant focus:border-primary focus:ring-0 focus:outline-none text-base font-body px-2 py-3 transition-all duration-300 resize-none" placeholder=" Tell me about the project you would like to discuss!"></textarea>
+</div>
+<button type="submit" class="w-full bg-primary text-white px-8 py-4 font-headline font-bold uppercase text-xs tracking-widest hover:bg-primary-dark transition-colors mt-4">Send Message</button>
+</div>
+<div id="contact-success" class="hidden py-8">
+<p class="text-lg font-body font-light text-secondary">Thanks! I'll get back to you shortly.</p>
+</div>
+</form>
+</div>
+</div>
+<!-- Footer -->
+<footer class="bg-surface border-t border-outline-variant/30 py-12">
+<div class="flex flex-col items-center gap-5 w-full text-center px-4">
+<div class="text-lg font-bold text-on-surface font-headline tracking-tighter uppercase">Karen Schoellkopf</div>
+<div class="w-12 h-[1px] bg-primary mt-2"></div>
+<p class="text-xs font-body font-light text-secondary tracking-wide uppercase">Made with <span class="heart-wave" style="margin: 0 4px;">❤️</span> in Brooklyn</p>
+<p class="text-[10px] text-outline font-label uppercase tracking-[0.3em] mt-2">&copy; 2026 All Rights Reserved</p>
+</div>
+</footer>
+<!-- Bottom Navigation Bar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-surface/95 backdrop-blur-md border-t border-outline-variant/30">
+<div class="flex justify-around items-center h-16">
+<a class="flex flex-col items-center text-secondary/60" href="index.html">
+<svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg>
+<span class="text-[10px] font-label uppercase tracking-tighter">Home</span>
+</a>
+<a class="flex flex-col items-center text-on-surface font-semibold" href="projects.html">
+<svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor"><path d="M120-520v-320h320v320H120Zm0 400v-320h320v320H120Zm400-400v-320h320v320H520Zm0 400v-320h320v320H520ZM200-600h160v-160H200v160Zm400 0h160v-160H600v160Zm0 400h160v-160H600v160ZM200-200h160v-160H200v160Zm400-400Zm0 240Zm-240 0Zm0-240Z"/></svg>
+<span class="text-[10px] font-label uppercase tracking-tighter">Projects<span class="text-coral-accent">.</span></span>
+</a>
+<a class="flex flex-col items-center text-secondary/60" href="about.html">
+<svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor"><path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Z"/></svg>
+<span class="text-[10px] font-label uppercase tracking-tighter">About</span>
+</a>
+</div>
+</nav>
+<script>
+  // Scroll-triggered animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.15,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  document.querySelectorAll('.reveal, .divider-anim').forEach(el => {
+    observer.observe(el);
+  });
+
+  // Mobile menu toggle
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const closeMenu = document.getElementById('close-menu');
+  const menuLinks = mobileMenu.querySelectorAll('a');
+
+  menuToggle.addEventListener('click', () => {
+    mobileMenu.classList.remove('hidden');
+    mobileMenu.classList.add('flex');
+  });
+
+  function closeMobileMenu() {
+    mobileMenu.classList.add('hidden');
+    mobileMenu.classList.remove('flex');
+  }
+
+  closeMenu.addEventListener('click', closeMobileMenu);
+  menuLinks.forEach(link => link.addEventListener('click', closeMobileMenu));
+
+  // Contact modal
+  const contactModal = document.getElementById('contact-modal');
+  const contactBackdrop = document.getElementById('contact-backdrop');
+  const contactClose = document.getElementById('contact-close');
+  const contactForm = document.getElementById('contact-form');
+  const contactSuccess = document.getElementById('contact-success');
+  const contactFields = document.getElementById('contact-fields');
+
+  function openContactModal() {
+    contactModal.classList.remove('hidden');
+    contactModal.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => contactModal.querySelector('input[name="name"]')?.focus(), 100);
+    contactFields.classList.remove('hidden');
+    contactSuccess.classList.add('hidden');
+    contactForm.reset();
+  }
+
+  function closeContactModal() {
+    contactModal.classList.add('hidden');
+    contactModal.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
+
+  contactBackdrop.addEventListener('click', closeContactModal);
+  contactClose.addEventListener('click', closeContactModal);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !contactModal.classList.contains('hidden')) closeContactModal();
+  });
+
+  contactModal.addEventListener('keydown', (e) => {
+    if (e.key !== 'Tab') return;
+    const focusable = contactModal.querySelectorAll('button, input, textarea, [tabindex]:not([tabindex="-1"])');
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  });
+
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(Object.fromEntries(new FormData(contactForm)))
+      });
+      if (response.ok) { contactFields.classList.add('hidden'); contactSuccess.classList.remove('hidden'); }
+      else { submitBtn.textContent = 'Something went wrong. Try again?'; submitBtn.disabled = false; setTimeout(() => { submitBtn.textContent = originalText; }, 3000); }
+    } catch { submitBtn.textContent = 'Something went wrong. Try again?'; submitBtn.disabled = false; setTimeout(() => { submitBtn.textContent = originalText; }, 3000); }
+  });
+</script>
+</body></html>

@@ -1,0 +1,17 @@
+{
+  "name": "work-portfolio-draft-apr-2026",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwindcss -i input.css -o style.css --minify",
+    "watch:css": "tailwindcss -i input.css -o style.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.11",
+    "tailwindcss": "^3.4.19"
+  }
+}
