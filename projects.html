@@ -31,6 +31,7 @@
 <a class="text-secondary/60 font-medium text-xs tracking-[0.1em] font-label hover:opacity-100 hover:text-coral-accent transition-all duration-300 nav-hover-link" href="index.html">Home</a>
 <a class="text-on-surface font-semibold text-xs tracking-[0.1em] font-label hover:text-coral-accent transition-colors duration-300" href="projects.html">Projects<span class="text-coral-accent">.</span></a>
 <a class="text-secondary/60 font-medium text-xs tracking-[0.1em] font-label hover:opacity-100 hover:text-coral-accent transition-all duration-300 nav-hover-link" href="about.html">About</a>
+<a class="text-secondary/60 font-medium text-xs tracking-[0.1em] font-label hover:opacity-100 hover:text-coral-accent transition-all duration-300 nav-hover-link cursor-pointer" onclick="openContactModal()" role="button">Contact</a>
 </div>
 <button id="menu-toggle" class="md:hidden" aria-label="Open menu">
 <svg class="w-6 h-6 text-on-surface" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
@@ -45,6 +46,7 @@
 <a class="text-2xl font-headline font-bold text-secondary" href="index.html">Home</a>
 <a class="text-2xl font-headline font-bold text-on-surface" href="projects.html">Projects</a>
 <a class="text-2xl font-headline font-bold text-secondary" href="about.html">About</a>
+<a class="text-2xl font-headline font-bold text-secondary cursor-pointer" onclick="openContactModal(); closeMobileMenu();" role="button">Contact</a>
 </div>
 <main id="main-content" class="pt-32">
 
@@ -85,31 +87,8 @@ Full CV on LinkedIn <span class="group-hover:translate-x-1 transition-transform"
 </div>
 </div>
 
-<!-- Side by side: Approach + Outcome -->
+<!-- Side by side: Outcome + Approach -->
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-<div>
-<p class="text-xs font-label uppercase tracking-[0.15em] text-primary font-bold mb-6">My approach</p>
-<p class="text-base font-body font-light text-secondary leading-relaxed mb-6">Designed a multi-layered intervention system:</p>
-<ul class="space-y-5" role="list">
-<li class="flex gap-4 items-start">
-<span class="w-6 h-[1px] bg-primary mt-3 shrink-0"></span>
-<p class="text-base font-body font-light text-secondary">Built a benefits cliff calculator enabling workers to model earning scenarios and understand their specific cliff risks</p>
-</li>
-<li class="flex gap-4 items-start">
-<span class="w-6 h-[1px] bg-primary mt-3 shrink-0"></span>
-<p class="text-base font-body font-light text-secondary">Created a coach training program to scale human support nationwide, and provide workers real context for tricky decision-making processes they were navigating for career and finances</p>
-</li>
-<li class="flex gap-4 items-start">
-<span class="w-6 h-[1px] bg-primary mt-3 shrink-0"></span>
-<p class="text-base font-body font-light text-secondary">Piloted employer-based financial solutions with multi-year partnerships to test intervention models</p>
-</li>
-<li class="flex gap-4 items-start">
-<span class="w-6 h-[1px] bg-primary mt-3 shrink-0"></span>
-<p class="text-base font-body font-light text-secondary">Established a product-to-policy pipeline, using program data to inform federal and state policy recommendations</p>
-</li>
-</ul>
-<p class="text-base font-body font-light text-secondary leading-relaxed mt-6">Rather than choosing between tech or human support, policy or product, we built an integrated system recognizing that benefits cliffs require solutions across all these domains.</p>
-</div>
 <div>
 <p class="text-xs font-label uppercase tracking-[0.15em] text-primary font-bold mb-6">The outcome</p>
 <ul class="space-y-5" role="list">
@@ -138,6 +117,29 @@ Full CV on LinkedIn <span class="group-hover:translate-x-1 transition-transform"
 <p class="text-base font-body font-light text-secondary">One of only 2 surviving organizations from a 20+ member cohort</p>
 </li>
 </ul>
+</div>
+<div>
+<p class="text-xs font-label uppercase tracking-[0.15em] text-primary font-bold mb-6">My approach</p>
+<p class="text-base font-body font-light text-secondary leading-relaxed mb-6">Designed a multi-layered intervention system:</p>
+<ul class="space-y-5" role="list">
+<li class="flex gap-4 items-start">
+<span class="w-6 h-[1px] bg-primary mt-3 shrink-0"></span>
+<p class="text-base font-body font-light text-secondary">Built a benefits cliff calculator enabling workers to model earning scenarios and understand their specific cliff risks</p>
+</li>
+<li class="flex gap-4 items-start">
+<span class="w-6 h-[1px] bg-primary mt-3 shrink-0"></span>
+<p class="text-base font-body font-light text-secondary">Created a coach training program to scale human support nationwide, and provide workers real context for tricky decision-making processes they were navigating for career and finances</p>
+</li>
+<li class="flex gap-4 items-start">
+<span class="w-6 h-[1px] bg-primary mt-3 shrink-0"></span>
+<p class="text-base font-body font-light text-secondary">Piloted employer-based financial solutions with multi-year partnerships to test intervention models</p>
+</li>
+<li class="flex gap-4 items-start">
+<span class="w-6 h-[1px] bg-primary mt-3 shrink-0"></span>
+<p class="text-base font-body font-light text-secondary">Established a product-to-policy pipeline, using program data to inform federal and state policy recommendations</p>
+</li>
+</ul>
+<p class="text-base font-body font-light text-secondary leading-relaxed mt-6">Rather than choosing between tech or human support, policy or product, we built an integrated system recognizing that benefits cliffs require solutions across all these domains.</p>
 </div>
 </div>
 </section>
@@ -168,8 +170,21 @@ Full CV on LinkedIn <span class="group-hover:translate-x-1 transition-transform"
 </div>
 </div>
 
-<!-- Side by side: Approach + Outcome -->
+<!-- Side by side: Outcome + Approach -->
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+<div>
+<p class="text-xs font-label uppercase tracking-[0.15em] text-primary font-bold mb-6">The outcome</p>
+<ul class="space-y-5" role="list">
+<li class="flex gap-4 items-start">
+<span class="w-6 h-[1px] bg-primary mt-3 shrink-0"></span>
+<p class="text-base font-body font-light text-secondary">Scaled training programs nationally, reaching thousands more women while reducing per-trainee costs</p>
+</li>
+<li class="flex gap-4 items-start">
+<span class="w-6 h-[1px] bg-primary mt-3 shrink-0"></span>
+<p class="text-base font-body font-light text-secondary">Created infrastructure that supported the organization's growth through subsequent election cycles</p>
+</li>
+</ul>
+</div>
 <div>
 <p class="text-xs font-label uppercase tracking-[0.15em] text-primary font-bold mb-6">My approach</p>
 <ul class="space-y-5" role="list">
@@ -192,19 +207,6 @@ Full CV on LinkedIn <span class="group-hover:translate-x-1 transition-transform"
 <li class="flex gap-4 items-start">
 <span class="w-6 h-[1px] bg-primary mt-3 shrink-0"></span>
 <p class="text-base font-body font-light text-secondary">Brought operational rigor to product development and external communications</p>
-</li>
-</ul>
-</div>
-<div>
-<p class="text-xs font-label uppercase tracking-[0.15em] text-primary font-bold mb-6">The outcome</p>
-<ul class="space-y-5" role="list">
-<li class="flex gap-4 items-start">
-<span class="w-6 h-[1px] bg-primary mt-3 shrink-0"></span>
-<p class="text-base font-body font-light text-secondary">Scaled training programs nationally, reaching thousands more women while reducing per-trainee costs</p>
-</li>
-<li class="flex gap-4 items-start">
-<span class="w-6 h-[1px] bg-primary mt-3 shrink-0"></span>
-<p class="text-base font-body font-light text-secondary">Created infrastructure that supported the organization's growth through subsequent election cycles</p>
 </li>
 </ul>
 </div>
@@ -237,25 +239,8 @@ Full CV on LinkedIn <span class="group-hover:translate-x-1 transition-transform"
 </div>
 </div>
 
-<!-- Side by side: Approach + Outcome -->
+<!-- Side by side: Outcome + Approach -->
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-<div>
-<p class="text-xs font-label uppercase tracking-[0.15em] text-primary font-bold mb-6">My approach</p>
-<ul class="space-y-5" role="list">
-<li class="flex gap-4 items-start">
-<span class="w-6 h-[1px] bg-primary mt-3 shrink-0"></span>
-<p class="text-base font-body font-light text-secondary">Built a mobile-first platform (novel at the time) with custom RSVP functionality, backend database, and user-facing CMS</p>
-</li>
-<li class="flex gap-4 items-start">
-<span class="w-6 h-[1px] bg-primary mt-3 shrink-0"></span>
-<p class="text-base font-body font-light text-secondary">Managed full product lifecycle from QA through public rollout</p>
-</li>
-<li class="flex gap-4 items-start">
-<span class="w-6 h-[1px] bg-primary mt-3 shrink-0"></span>
-<p class="text-base font-body font-light text-secondary">Created operational infrastructure to coordinate hundreds of companies across NYC simultaneously</p>
-</li>
-</ul>
-</div>
 <div>
 <p class="text-xs font-label uppercase tracking-[0.15em] text-primary font-bold mb-6">The outcome</p>
 <ul class="space-y-5" role="list">
@@ -274,6 +259,23 @@ Full CV on LinkedIn <span class="group-hover:translate-x-1 transition-transform"
 <li class="flex gap-4 items-start">
 <span class="w-6 h-[1px] bg-primary mt-3 shrink-0"></span>
 <p class="text-base font-body font-light text-secondary">Opensourced the idea and created plug-and-play handbook implemented in numerous other cities around the globe</p>
+</li>
+</ul>
+</div>
+<div>
+<p class="text-xs font-label uppercase tracking-[0.15em] text-primary font-bold mb-6">My approach</p>
+<ul class="space-y-5" role="list">
+<li class="flex gap-4 items-start">
+<span class="w-6 h-[1px] bg-primary mt-3 shrink-0"></span>
+<p class="text-base font-body font-light text-secondary">Built a mobile-first platform (novel at the time) with custom RSVP functionality, backend database, and user-facing CMS</p>
+</li>
+<li class="flex gap-4 items-start">
+<span class="w-6 h-[1px] bg-primary mt-3 shrink-0"></span>
+<p class="text-base font-body font-light text-secondary">Managed full product lifecycle from QA through public rollout</p>
+</li>
+<li class="flex gap-4 items-start">
+<span class="w-6 h-[1px] bg-primary mt-3 shrink-0"></span>
+<p class="text-base font-body font-light text-secondary">Created operational infrastructure to coordinate hundreds of companies across NYC simultaneously</p>
 </li>
 </ul>
 </div>
@@ -326,92 +328,6 @@ Full CV on LinkedIn <span class="group-hover:translate-x-1 transition-transform"
 </div>
 </section>
 
-<!-- Divider -->
-<div class="max-w-5xl mx-auto px-6">
-<div class="w-full h-[1px] bg-outline-variant mb-20 divider-anim"></div>
-</div>
-
-<!-- ==================== -->
-<!-- THOUGHT LEADERSHIP -->
-<!-- ==================== -->
-<section class="max-w-5xl mx-auto px-6 mb-32 md:mb-[100px] reveal">
-<h2 class="section-heading font-headline font-extrabold text-on-surface mb-12">Thought leadership</h2>
-
-<!-- Speaking Engagements -->
-<div class="mb-16">
-<p class="text-xs font-label uppercase tracking-[0.15em] text-secondary font-bold mb-8">Speaking engagements</p>
-<ul class="space-y-5" role="list">
-<li class="flex gap-6 items-start">
-<span class="w-8 h-[1px] bg-primary mt-4 shrink-0"></span>
-<p class="text-lg font-body font-light text-secondary">House Committee on Rules (2021), Ending Hunger in America: A Conversation about Benefit Cliffs</p>
-</li>
-<li class="flex gap-6 items-start">
-<span class="w-8 h-[1px] bg-primary mt-4 shrink-0"></span>
-<p class="text-lg font-body font-light text-secondary">Federal Reserve Bank of Atlanta (2019), Summit on the Economics and Policies of Cliffs in the Social Safety Net and Economic Mobility</p>
-</li>
-<li class="flex gap-6 items-start">
-<span class="w-8 h-[1px] bg-primary mt-4 shrink-0"></span>
-<p class="text-lg font-body font-light text-secondary">The Aspen Institute Financial Security Program (2022), Benefits21 Leadership Forum</p>
-</li>
-<li class="flex gap-6 items-start">
-<span class="w-8 h-[1px] bg-primary mt-4 shrink-0"></span>
-<p class="text-lg font-body font-light text-secondary">CirclesUSA National Conference (2021, 2023)</p>
-</li>
-<li class="flex gap-6 items-start">
-<span class="w-8 h-[1px] bg-primary mt-4 shrink-0"></span>
-<p class="text-lg font-body font-light text-secondary">ECS Forum on Justice and Opportunity (2019, 2020, 2021, 2022)</p>
-</li>
-<li class="flex gap-6 items-start">
-<span class="w-8 h-[1px] bg-primary mt-4 shrink-0"></span>
-<p class="text-lg font-body font-light text-secondary">Compass Working Capital National FSS Conference (2022)</p>
-</li>
-<li class="flex gap-6 items-start">
-<span class="w-8 h-[1px] bg-primary mt-4 shrink-0"></span>
-<p class="text-lg font-body font-light text-secondary">NYS CDFI Conference (2019)</p>
-</li>
-<li class="flex gap-6 items-start">
-<span class="w-8 h-[1px] bg-primary mt-4 shrink-0"></span>
-<p class="text-lg font-body font-light text-secondary">Ideas42 Behavioral Summit (2018)</p>
-</li>
-</ul>
-</div>
-
-<!-- Publications & Media -->
-<div>
-<p class="text-xs font-label uppercase tracking-[0.15em] text-secondary font-bold mb-8">Selected publications &amp; media</p>
-<ul class="space-y-5" role="list">
-<li class="flex gap-6 items-start">
-<span class="w-8 h-[1px] bg-primary mt-4 shrink-0"></span>
-<p class="text-lg font-body font-light text-secondary"><span class="text-on-surface font-bold">2025 Report</span>: <a href="https://myleapfund.com/employer-report-2025/" target="_blank" rel="noopener" class="text-on-surface font-bold border-b border-transparent hover:text-coral-accent hover:border-coral-accent pb-0.5 transition-all">Employers &amp; Benefits Cliffs: Five Years of Field Learnings</a>: Comprehensive Leap Fund report on employer-based benefits cliff interventions</p>
-</li>
-<li class="flex gap-6 items-start">
-<span class="w-8 h-[1px] bg-primary mt-4 shrink-0"></span>
-<p class="text-lg font-body font-light text-secondary"><span class="text-on-surface font-bold">Congressional testimony</span>: <a href="https://rules.house.gov/sites/evo-subsites/republicans-rules.house.gov/files/HRDT-RU00-117-WState-SchoellkopfK-20211013.pdf" target="_blank" rel="noopener" class="text-on-surface font-bold border-b border-transparent hover:text-coral-accent hover:border-coral-accent pb-0.5 transition-all">Written testimony</a> for U.S. House Committee on Rules (2021)</p>
-</li>
-<li class="flex gap-6 items-start">
-<span class="w-8 h-[1px] bg-primary mt-4 shrink-0"></span>
-<p class="text-lg font-body font-light text-secondary"><span class="text-on-surface font-bold">Op ed</span>: <a href="https://www.nydailynews.com/opinion/ny-oped-ny-needs-universal-child-care-20220326-k7az6bob3netplxfr5sdeduzva-story.html" target="_blank" rel="noopener" class="text-on-surface font-bold border-b border-transparent hover:text-coral-accent hover:border-coral-accent pb-0.5 transition-all">Why N.Y. needs a universal childcare plan</a>, Daily News, 2022 (<a href="https://drive.google.com/file/d/1TUmVUlw1vn8uY5auoYozwt68SgdrkSs1/view?usp=sharing" target="_blank" rel="noopener" class="text-on-surface font-bold border-b border-transparent hover:text-coral-accent hover:border-coral-accent pb-0.5 transition-all">accessible version</a>)</p>
-</li>
-<li class="flex gap-6 items-start">
-<span class="w-8 h-[1px] bg-primary mt-4 shrink-0"></span>
-<p class="text-lg font-body font-light text-secondary"><span class="text-on-surface font-bold">Research contributor</span>: <a href="https://chamber-foundation.files.svdcdn.com/production/documents/USCCF_BenefitsCliffsBrochure_Digital.pdf?dm=1694110498" target="_blank" rel="noopener" class="text-on-surface font-bold border-b border-transparent hover:text-coral-accent hover:border-coral-accent pb-0.5 transition-all">U.S. Chamber of Commerce Research Foundation</a> (2022), <a href="https://finhealthnetwork.org/research/the-benefits-cliff-dilemma-navigating-wage-increases-and-public-benefits" target="_blank" rel="noopener" class="text-on-surface font-bold border-b border-transparent hover:text-coral-accent hover:border-coral-accent pb-0.5 transition-all">The Financial Health Network</a> (2023)</p>
-</li>
-<li class="flex gap-6 items-start">
-<span class="w-8 h-[1px] bg-primary mt-4 shrink-0"></span>
-<p class="text-lg font-body font-light text-secondary"><span class="text-on-surface font-bold">Podcast interviews</span>: <a href="https://open.spotify.com/episode/4qYCYvDhqkfBHm6K77elwq?si=QcJJZ2L6SpmdcSyZpATnEw&nd=1&dlsi=a1d98a1671cf4ec1" target="_blank" rel="noopener" class="text-on-surface font-bold border-b border-transparent hover:text-coral-accent hover:border-coral-accent pb-0.5 transition-all">More Than Profit</a> (2024), <a href="https://myleapfund.com/news/2022/2/28/narativ-story-talks-a-podcast-interview-with-leap-fund" target="_blank" rel="noopener" class="text-on-surface font-bold border-b border-transparent hover:text-coral-accent hover:border-coral-accent pb-0.5 transition-all">Narativ StoryTalks</a> (2022)</p>
-</li>
-<li class="flex gap-6 items-start">
-<span class="w-8 h-[1px] bg-primary mt-4 shrink-0"></span>
-<p class="text-lg font-body font-light text-secondary"><span class="text-on-surface font-bold">Featured in</span> The New York Times, The Philadelphia Tribune, The Counter, and others</p>
-</li>
-</ul>
-<div class="mt-10">
-<a class="text-lg font-body font-bold text-on-surface hover:text-coral-accent transition-colors flex items-center gap-2 group" href="https://www.linkedin.com/in/karenschoellkopf/" target="_blank" rel="noopener">
-Complete publication list on LinkedIn <span class="group-hover:translate-x-1 transition-transform">→</span>
-</a>
-</div>
-</div>
-</section>
 
 </main>
 <!-- Contact Modal -->
