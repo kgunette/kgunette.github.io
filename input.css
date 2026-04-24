@@ -9,6 +9,11 @@
   font-weight: 800 !important;
 }
 
+/* Headshot softening */
+.headshot-filter {
+  filter: saturate(0.85) brightness(1.02);
+}
+
 /* Hero fade-up on load */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(20px); }
@@ -24,24 +29,24 @@
 .d4 { animation-delay: 0.55s; }
 .d5 { animation-delay: 0.7s; }
 
-/* Scroll-triggered section reveals */
-.reveal {
+/* Scroll-triggered section reveals (JS-dependent, degrades gracefully without JS) */
+.js .reveal {
   opacity: 0;
   transform: translateY(14px);
   transition: opacity 0.55s ease-out, transform 0.55s ease-out;
 }
-.reveal.visible {
+.js .reveal.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Divider lines grow on scroll */
-.divider-anim {
+/* Divider lines grow on scroll (JS-dependent, degrades gracefully without JS) */
+.js .divider-anim {
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.45s ease-out;
 }
-.divider-anim.visible {
+.js .divider-anim.visible {
   transform: scaleX(1);
 }
 
@@ -75,4 +80,30 @@
   display: inline-block;
   animation: heartWave 1.5s ease-in-out infinite;
   transform-origin: center bottom;
+}
+
+/* "What I help with" accordion (native <details>) */
+.help-summary {
+  list-style: none;
+  cursor: pointer;
+}
+.help-summary::-webkit-details-marker {
+  display: none;
+}
+.help-item > .help-body {
+  display: grid !important;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease-out;
+}
+.help-item[open] > .help-body {
+  grid-template-rows: 1fr;
+}
+.help-item > .help-body > * {
+  overflow: hidden;
+  min-height: 0;
+}
+.help-item[open] .help-indicator {
+  background-color: #E8513D;
+  color: #ffffff;
+  transform: rotate(45deg);
 }

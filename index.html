@@ -4,6 +4,9 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Karen Schoellkopf</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<script>document.documentElement.classList.add('js');</script>
 <meta name="description" content="Product strategist and builder with 25+ years across startups, nonprofits, and Fortune 500s. I help organizations build new things, fix what isn't working, and figure out what's next."/>
 <meta property="og:title" content="Karen Schoellkopf"/>
 <meta property="og:description" content="Product strategist and builder with 25+ years across startups, nonprofits, and Fortune 500s. I help organizations build new things, fix what isn't working, and figure out what's next."/>
@@ -31,7 +34,7 @@
 <a class="text-on-surface font-semibold text-xs tracking-[0.1em] font-label hover:text-coral-accent transition-colors duration-300" href="#">Home<span class="text-coral-accent">.</span></a>
 <a class="text-secondary/60 font-medium text-xs tracking-[0.1em] font-label hover:opacity-100 hover:text-coral-accent transition-all duration-300 nav-hover-link" href="projects.html">Projects</a>
 <a class="text-secondary/60 font-medium text-xs tracking-[0.1em] font-label hover:opacity-100 hover:text-coral-accent transition-all duration-300 nav-hover-link" href="about.html">About</a>
-<a class="text-secondary/60 font-medium text-xs tracking-[0.1em] font-label hover:opacity-100 hover:text-coral-accent transition-all duration-300 nav-hover-link cursor-pointer" onclick="openContactModal()" role="button">Contact</a>
+<button type="button" class="js-contact-trigger text-secondary/60 font-medium text-xs tracking-[0.1em] font-label hover:opacity-100 hover:text-coral-accent transition-all duration-300 nav-hover-link cursor-pointer">Contact</button>
 </div>
 <button id="menu-toggle" class="md:hidden" aria-label="Open menu">
 <svg class="w-6 h-6 text-on-surface" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
@@ -46,7 +49,7 @@
 <a class="text-2xl font-headline font-bold text-on-surface" href="#">Home</a>
 <a class="text-2xl font-headline font-bold text-secondary" href="projects.html">Projects</a>
 <a class="text-2xl font-headline font-bold text-secondary" href="about.html">About</a>
-<a class="text-2xl font-headline font-bold text-secondary cursor-pointer" onclick="openContactModal(); closeMobileMenu();" role="button">Contact</a>
+<button type="button" class="js-contact-trigger text-2xl font-headline font-bold text-secondary cursor-pointer text-left">Contact</button>
 </div>
 <main id="main-content" class="pt-32">
 <!-- Hero Section -->
@@ -69,14 +72,14 @@
 <a href="projects.html" class="bg-primary text-white px-10 py-5 font-headline font-bold text-sm tracking-widest uppercase hover:bg-primary-dark transition-colors">
                             View Projects
                         </a>
-<a class="text-coral-accent font-bold flex items-center gap-2 group cursor-pointer transition-all" onclick="openContactModal()" role="button">
+<button type="button" class="js-contact-trigger text-coral-accent font-bold flex items-center gap-2 group cursor-pointer transition-all">
                             Let's collaborate <span class="group-hover:translate-x-1 transition-transform">→</span>
-                        </a>
+                        </button>
 </div>
 </div>
 <div class="hidden lg:flex lg:col-span-4 items-start justify-end pt-12 anim d3">
 <div class="w-full aspect-[4/5] relative overflow-hidden rounded-[6px]">
-<img src="karen-headshot.jpg" alt="Karen Schoellkopf" class="w-full h-full object-cover object-top" style="filter: saturate(0.85) brightness(1.02);" />
+<img src="karen-headshot.jpg" alt="Karen Schoellkopf" fetchpriority="high" class="w-full h-full object-cover object-top headshot-filter" />
 </div>
 </div>
 </div>
@@ -84,55 +87,97 @@
 </section>
 <!-- What I Help With -->
 <section class="max-w-5xl mx-auto px-6 mb-32 md:mb-[100px] reveal">
-<h2 class="section-heading font-headline font-extrabold text-on-surface mb-16">What I help with</h2>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
+<p class="text-xs uppercase tracking-[0.2em] font-label text-primary font-bold mb-8">Three kinds of work I help organizations with</p>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-10">
 
-<div class="space-y-4">
+<!-- Theme: Launch -->
+<div class="space-y-6">
 <div class="flex items-center gap-3">
-<div class="w-1.5 h-6 bg-coral-accent"></div>
-<h3 class="text-lg font-body font-bold text-on-surface">Building something from scratch</h3>
+<div class="w-1.5 h-8 bg-coral-accent"></div>
+<h2 class="text-3xl font-headline font-extrabold text-on-surface">Launches</h2>
 </div>
-<p class="text-lg font-body font-light text-secondary leading-relaxed">You secured funding for an idea, and now you need someone to shape it into a strategy and a product or program people actually use.</p>
+<details class="help-item">
+<summary class="help-summary flex items-start gap-3 py-2 group">
+<span class="help-indicator w-5 h-5 shrink-0 mt-0.5 rounded-full border border-coral-accent text-coral-accent text-sm font-light leading-none flex items-center justify-center transition-all duration-300 group-hover:bg-coral-accent group-hover:text-white" aria-hidden="true">+</span>
+<h4 class="text-base font-body font-bold text-on-surface group-hover:text-coral-accent transition-colors flex-1">Building something from scratch</h4>
+</summary>
+<div class="help-body">
+<div>
+<p class="text-base font-body font-light text-secondary leading-relaxed pt-2 pb-2 pl-7">You secured funding for an idea, and now you need someone to shape it into a strategy and a product or program people actually use.</p>
 </div>
-
-<div class="space-y-4">
-<div class="flex items-center gap-3">
-<div class="w-1.5 h-6 bg-coral-accent"></div>
-<h3 class="text-lg font-body font-bold text-on-surface">Fixing what isn't working</h3>
 </div>
-<p class="text-lg font-body font-light text-secondary leading-relaxed">You're past the idea stage but it's not working the way you thought it would, and you need someone to diagnose the problem and help fix it.</p>
+</details>
+<details class="help-item">
+<summary class="help-summary flex items-start gap-3 py-2 group">
+<span class="help-indicator w-5 h-5 shrink-0 mt-0.5 rounded-full border border-coral-accent text-coral-accent text-sm font-light leading-none flex items-center justify-center transition-all duration-300 group-hover:bg-coral-accent group-hover:text-white" aria-hidden="true">+</span>
+<h4 class="text-base font-body font-bold text-on-surface group-hover:text-coral-accent transition-colors flex-1">Running internal experiments</h4>
+</summary>
+<div class="help-body">
+<div>
+<p class="text-base font-body font-light text-secondary leading-relaxed pt-2 pb-2 pl-7">Your organization wants to test new ideas but your innovation team is lean. You need someone who can take experiments from concept to proof of concept.</p>
 </div>
-
-<div class="space-y-4">
-<div class="flex items-center gap-3">
-<div class="w-1.5 h-6 bg-coral-accent"></div>
-<h3 class="text-lg font-body font-bold text-on-surface">Re-envisioning a program</h3>
 </div>
-<p class="text-lg font-body font-light text-secondary leading-relaxed">You built something that worked for its original audience, but the landscape has shifted and you've hit a ceiling with your current approach. You need someone to rethink the strategy without blowing up what works.</p>
-</div>
-
-<div class="space-y-4">
-<div class="flex items-center gap-3">
-<div class="w-1.5 h-6 bg-coral-accent"></div>
-<h3 class="text-lg font-body font-bold text-on-surface">Exploring a pivot</h3>
-</div>
-<p class="text-lg font-body font-light text-secondary leading-relaxed">You're at a crossroads and you'd like to explore options, both viable and risky. You need someone to help you scenario-plan, pressure-test each path, and create a clearer picture of what the way forward can actually look like.</p>
+</details>
 </div>
 
-<div class="space-y-4">
+<!-- Theme: Turnaround -->
+<div class="space-y-6">
 <div class="flex items-center gap-3">
-<div class="w-1.5 h-6 bg-coral-accent"></div>
-<h3 class="text-lg font-body font-bold text-on-surface">Implementing AI thoughtfully</h3>
+<div class="w-1.5 h-8 bg-coral-accent"></div>
+<h2 class="text-3xl font-headline font-extrabold text-on-surface">Turnarounds</h2>
 </div>
-<p class="text-lg font-body font-light text-secondary leading-relaxed">Your organization has an AI mandate but nobody's sure how to implement it thoughtfully. I get into the weeds of what you do and build a plan with your team that everyone can apply confidently.</p>
+<details class="help-item">
+<summary class="help-summary flex items-start gap-3 py-2 group">
+<span class="help-indicator w-5 h-5 shrink-0 mt-0.5 rounded-full border border-coral-accent text-coral-accent text-sm font-light leading-none flex items-center justify-center transition-all duration-300 group-hover:bg-coral-accent group-hover:text-white" aria-hidden="true">+</span>
+<h4 class="text-base font-body font-bold text-on-surface group-hover:text-coral-accent transition-colors flex-1">Fixing what isn't working</h4>
+</summary>
+<div class="help-body">
+<div>
+<p class="text-base font-body font-light text-secondary leading-relaxed pt-2 pb-2 pl-7">You're past the idea stage but it's not working the way you thought it would, and you need someone to diagnose the problem and help fix it.</p>
+</div>
+</div>
+</details>
+<details class="help-item">
+<summary class="help-summary flex items-start gap-3 py-2 group">
+<span class="help-indicator w-5 h-5 shrink-0 mt-0.5 rounded-full border border-coral-accent text-coral-accent text-sm font-light leading-none flex items-center justify-center transition-all duration-300 group-hover:bg-coral-accent group-hover:text-white" aria-hidden="true">+</span>
+<h4 class="text-base font-body font-bold text-on-surface group-hover:text-coral-accent transition-colors flex-1">Re-envisioning a program</h4>
+</summary>
+<div class="help-body">
+<div>
+<p class="text-base font-body font-light text-secondary leading-relaxed pt-2 pb-2 pl-7">You built something that worked for its original audience, but the landscape has shifted and you've hit a ceiling with your current approach. You need someone to rethink the strategy without blowing up what works.</p>
+</div>
+</div>
+</details>
 </div>
 
-<div class="space-y-4">
+<!-- Theme: Pivot -->
+<div class="space-y-6">
 <div class="flex items-center gap-3">
-<div class="w-1.5 h-6 bg-coral-accent"></div>
-<h3 class="text-lg font-body font-bold text-on-surface">Launching internal innovation</h3>
+<div class="w-1.5 h-8 bg-coral-accent"></div>
+<h2 class="text-3xl font-headline font-extrabold text-on-surface">Pivots</h2>
 </div>
-<p class="text-lg font-body font-light text-secondary leading-relaxed">Your organization wants to test new ideas but your innovation team is lean. You need someone who can take experiments from concept to proof of concept.</p>
+<details class="help-item">
+<summary class="help-summary flex items-start gap-3 py-2 group">
+<span class="help-indicator w-5 h-5 shrink-0 mt-0.5 rounded-full border border-coral-accent text-coral-accent text-sm font-light leading-none flex items-center justify-center transition-all duration-300 group-hover:bg-coral-accent group-hover:text-white" aria-hidden="true">+</span>
+<h4 class="text-base font-body font-bold text-on-surface group-hover:text-coral-accent transition-colors flex-1">Exploring options at a crossroads</h4>
+</summary>
+<div class="help-body">
+<div>
+<p class="text-base font-body font-light text-secondary leading-relaxed pt-2 pb-2 pl-7">You'd like to explore options, both viable and risky. You need someone to help you scenario-plan, pressure-test each path, and create a clearer picture of what the way forward can actually look like.</p>
+</div>
+</div>
+</details>
+<details class="help-item">
+<summary class="help-summary flex items-start gap-3 py-2 group">
+<span class="help-indicator w-5 h-5 shrink-0 mt-0.5 rounded-full border border-coral-accent text-coral-accent text-sm font-light leading-none flex items-center justify-center transition-all duration-300 group-hover:bg-coral-accent group-hover:text-white" aria-hidden="true">+</span>
+<h4 class="text-base font-body font-bold text-on-surface group-hover:text-coral-accent transition-colors flex-1">Implementing AI thoughtfully</h4>
+</summary>
+<div class="help-body">
+<div>
+<p class="text-base font-body font-light text-secondary leading-relaxed pt-2 pb-2 pl-7">Your organization has an AI mandate but nobody's sure how to implement it thoughtfully. I get into the weeds of what you do and build a plan with your team that everyone can apply confidently.</p>
+</div>
+</div>
+</details>
 </div>
 
 </div>
@@ -149,8 +194,8 @@ I've been thinking about AI implementation since 2023. I wrote organizational AI
 </div>
 <!-- How we can work together Sub-section -->
 <h2 class="section-heading font-headline font-extrabold text-on-surface mb-16">How we can work together</h2>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 mb-16">
-<div class="space-y-6 md:pr-4">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 mb-16">
+<div class="space-y-6 lg:pr-4">
 <div class="flex items-center gap-3">
 <div class="w-1.5 h-6 bg-coral-accent"></div>
 <h3 class="text-2xl font-headline font-bold">Project-based consulting</h3>
@@ -159,7 +204,7 @@ I've been thinking about AI implementation since 2023. I wrote organizational AI
                         You have a specific problem or initiative and need someone to help you develop the work to a specific milestone or launch.
                     </p>
 </div>
-<div class="space-y-6 md:pl-4">
+<div class="space-y-6 lg:pl-4">
 <div class="flex items-center gap-3">
 <div class="w-1.5 h-6 bg-coral-accent"></div>
 <h3 class="text-2xl font-headline font-bold">Fractional leadership</h3>
@@ -174,9 +219,9 @@ I've been thinking about AI implementation since 2023. I wrote organizational AI
 <a class="text-lg font-body font-bold text-on-surface hover:text-coral-accent transition-colors flex items-center gap-2 group" href="about.html">
                     See my values and how I work <span class="group-hover:translate-x-1 transition-transform">→</span>
 </a>
-<a class="text-coral-accent font-bold flex items-center gap-2 group cursor-pointer transition-all lg:hidden" onclick="openContactModal()" role="button">
+<button type="button" class="js-contact-trigger text-coral-accent font-bold flex items-center gap-2 group cursor-pointer transition-all lg:hidden">
                     Let's collaborate <span class="group-hover:translate-x-1 transition-transform">→</span>
-</a>
+</button>
 </div>
 </section>
 <!-- Divider -->
@@ -238,9 +283,9 @@ I've been thinking about AI implementation since 2023. I wrote organizational AI
 <p class="text-xl font-body font-light text-secondary leading-relaxed max-w-3xl mb-12">
                 I'd love to hear more about what you're working on and think through how we might build together.
             </p>
-<a class="text-lg font-body font-bold text-on-surface hover:text-coral-accent transition-colors flex items-center gap-2 group cursor-pointer" onclick="openContactModal()" role="button">
+<button type="button" class="js-contact-trigger text-lg font-body font-bold text-on-surface hover:text-coral-accent transition-colors flex items-center gap-2 group cursor-pointer">
                 Get in touch <span class="group-hover:translate-x-1 transition-transform">→</span>
-</a>
+</button>
 </section>
 </main>
 <!-- Contact Modal -->
@@ -307,7 +352,7 @@ I've been thinking about AI implementation since 2023. I wrote organizational AI
   const menuToggle = document.getElementById('menu-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
   const closeMenu = document.getElementById('close-menu');
-  const menuLinks = mobileMenu.querySelectorAll('a');
+  const menuLinks = mobileMenu.querySelectorAll('a, button:not(#close-menu)');
 
   menuToggle.addEventListener('click', () => {
     mobileMenu.classList.remove('hidden');
@@ -398,6 +443,11 @@ I've been thinking about AI implementation since 2023. I wrote organizational AI
       submitBtn.disabled = false;
       setTimeout(() => { submitBtn.textContent = originalText; }, 3000);
     }
+  });
+
+  // Contact modal triggers
+  document.querySelectorAll('.js-contact-trigger').forEach(btn => {
+    btn.addEventListener('click', openContactModal);
   });
 </script>
 </body></html>
