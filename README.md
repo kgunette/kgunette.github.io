@@ -9,10 +9,15 @@ Sora (headlines) + Manrope (body) on a warm, minimal layout with red/coral accen
 **Color Palette**
 - Primary: `#af2819` (deep red)
 - Coral accent: `#E8513D` (coral)
+- Tag teal: `#1F5560` (deep teal — used for theme category tags on projects.html)
 - On-surface: `#1a1c1c` (near black)
 - Secondary: `#5f5e5e` (medium gray)
 - Surface: `#f9f9f9` (off-white)
 - Outline variant: `#e2beb9` (warm light border)
+
+**Theme Tags**
+
+Projects are tagged by category (Launches / Turnarounds / Pivots) using outlined teal pills. Tags appear above each project heading on projects.html and connect back to the "What I help with" section on the homepage. The pill style echoes the rounded coral indicators on the homepage accordion.
 
 **Typography**
 - Headlines: Sora (Google Fonts), extrabold
@@ -66,4 +71,4 @@ Books display sorted by status (in progress, done, DNF), then alphabetically by 
 
 © 2026 Karen Schoellkopf
 
-Last updated: April 2026
+Last updated: 2026-04-24

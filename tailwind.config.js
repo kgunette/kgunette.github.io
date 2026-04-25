@@ -16,6 +16,7 @@ module.exports = {
         "on-primary-fixed": "#410100",
         "surface-container-low": "#f3f3f3",
         "surface-container": "#eeeeee",
+        "tag-teal": "#1F5560",
       },
       fontFamily: {
         headline: ["Sora", "sans-serif"],
