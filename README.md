@@ -19,6 +19,22 @@ Sora (headlines) + Manrope (body) on a warm, minimal layout with red/coral accen
 
 Projects are tagged by category (Launches / Turnarounds / Pivots) using outlined teal pills. Tags appear above each project heading on projects.html and connect back to the "What I help with" section on the homepage. The pill style echoes the rounded coral indicators on the homepage accordion.
 
+**Profile Photo**
+
+The headshot (`karen-headshot.jpg`) uses the `.headshot-filter` utility class defined in `input.css`:
+```css
+filter: saturate(0.85) brightness(1.02);
+```
+
+Slightly desaturates and lifts brightness for a softer look.
+
+Container pattern (used on both index.html hero and about.html sidebar):
+- Aspect ratio: `aspect-[4/5]` (portrait crop)
+- Rounded corners: `rounded-[6px]`
+- Image fill: `object-cover object-top` (anchors to the top so the face isn't cropped)
+
+The hero version also has `fetchpriority="high"` since it's above-the-fold LCP content. The about page version has a portrait credit caption underneath in small muted type, linking to the photographer.
+
 **Typography**
 - Headlines: Sora (Google Fonts), extrabold
 - Body: Manrope (Google Fonts), light/regular weight, 1.8 line-height
