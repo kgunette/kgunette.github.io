@@ -65,6 +65,9 @@ The hero version also has `fetchpriority="high"` since it's above-the-fold LCP c
 ├── about.html           # Values and how I work
 ├── projects.html        # Case studies and additional work
 ├── reading.html         # What I'm reading (pulls from Google Sheets)
+├── writing/             # Writing section (essays + newsletter signup)
+│   ├── index.html       # Writing index: tagline, signup card, post list
+│   └── *.html           # One page per essay, generated from career/work-newsletter/posts/*.md via /prep-newsletter-post
 ├── style.css            # Production Tailwind CSS
 ├── input.css            # Tailwind source with custom styles
 ├── tailwind.config.js   # Theme config (colors, fonts, forms plugin)
@@ -102,6 +105,10 @@ GitHub Pages from [`kgunette/kgunette.github.io`](https://github.com/kgunette/kg
 npm run build:css
 ```
 
+**Reviewing pages without a server**
+
+Opening any page via file:// in Chrome works fully styled, because the relative `style.css` link resolves as long as the file sits in its real location. Only a *copy* of a page separated from the site folder renders unstyled (no `style.css` next to it), which is why single-file versions for emailing need the CSS inlined.
+
 **Side-by-side layouts use `md:` (768px), not `lg:` (1024px)**
 
 The case study layout on projects.html activates side-by-side at `md:` so it matches when the desktop nav appears. Using `lg:` causes a visible mismatch where the nav looks "desktop" but content stays mobile-style stacked between 768–1023px.
@@ -109,6 +116,13 @@ The case study layout on projects.html activates side-by-side at `md:` so it mat
 ## Contact Form
 
 The contact modal on all pages uses [Web3Forms](https://web3forms.com/). Form submissions are sent to the email configured in the Web3Forms dashboard. The access key is embedded in each page's modal HTML.
+
+## Newsletter Signup Form
+
+The subscribe forms (Writing index + essay pages) post to Buttondown's embed endpoint (`https://buttondown.com/api/emails/embed-subscribe/kgunette`) in the background with `fetch` + `mode: 'no-cors'`, so readers stay on the page. Two things to know:
+
+- **The inline "Thanks! Check your email" message is optimistic.** `no-cors` means the page cannot read Buttondown's response, so the message only confirms the request was sent. The endpoint itself was verified working 2026-07-13: a direct POST returns 302 → `state=confirmed_subscription`, and the double-opt-in confirmation email arrives.
+- **Repeat signups from the same browser get silently rate-limited by Buttondown** (benign, but it makes hand-testing look broken). To test the flow, use a fresh `+tag` address (e.g. `karen.schoellkopf+test@gmail.com`) in a private window, confirm it appears in the Buttondown Subscribers list, then delete the test subscriber.
 
 ## Reading Page
 
