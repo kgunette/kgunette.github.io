@@ -219,7 +219,8 @@
       var btn = form.querySelector('button[type="submit"]');
       var original = btn.textContent;
       btn.disabled = true;
-      btn.textContent = 'Subscribing…';
+      btn.classList.add('subscribing');
+      btn.innerHTML = 'Subscribing<span class="dot">.</span><span class="dot">.</span><span class="dot">.</span>';
       var body = new URLSearchParams(new FormData(form));
       fetch(form.action, { method: 'POST', body: body, mode: 'no-cors' })
         .then(function () {
@@ -229,6 +230,7 @@
         })
         .catch(function () {
           btn.disabled = false;
+          btn.classList.remove('subscribing');
           btn.textContent = original;
           msg.textContent = "Hmm, that didn't go through, please try again.";
           msg.classList.remove('hidden');

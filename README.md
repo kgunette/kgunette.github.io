@@ -67,6 +67,7 @@ The hero version also has `fetchpriority="high"` since it's above-the-fold LCP c
 ├── reading.html         # What I'm reading (pulls from Google Sheets)
 ├── writing/             # Writing section (essays + newsletter signup)
 │   ├── index.html       # Writing index: tagline, signup card, post list
+│   ├── subscribed.html  # Post-confirmation "You're in" page (noindexed, no footer subscribe CTA; Buttondown's after-confirming redirect lands here)
 │   └── *.html           # One page per essay, generated from career/work-newsletter/posts/*.md via /prep-newsletter-post
 ├── style.css            # Production Tailwind CSS
 ├── input.css            # Tailwind source with custom styles
@@ -123,6 +124,7 @@ The subscribe forms (Writing index + essay pages) post to Buttondown's embed end
 
 - **The inline "Thanks! Check your email" message is optimistic.** `no-cors` means the page cannot read Buttondown's response, so the message only confirms the request was sent. The endpoint itself was verified working 2026-07-13: a direct POST returns 302 → `state=confirmed_subscription`, and the double-opt-in confirmation email arrives.
 - **Repeat signups from the same browser get silently rate-limited by Buttondown** (benign, but it makes hand-testing look broken). To test the flow, use a fresh `+tag` address (e.g. `karen.schoellkopf+test@gmail.com`) in a private window, confirm it appears in the Buttondown Subscribers list, then delete the test subscriber.
+- **The platform side** (Buttondown firewall and its silent signup drops, sending domain DNS, reply routing, full testing protocol) is documented in `career/work-newsletter/buttondown-reference.md`. Read that before debugging a "signup didn't work" report.
 
 ## Reading Page
 
