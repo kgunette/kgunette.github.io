@@ -129,15 +129,26 @@ The subscribe forms (Writing index + essay pages) post to Buttondown's embed end
 
 ## Reading Page
 
-reading.html pulls book data from a published Google Sheet:
+reading.html pulls book data from a published Google Sheet ("Book & Media & Recs Oh My"):
 
 - 2026: `https://docs.google.com/spreadsheets/d/e/2PACX-1vQuOieHRZ_cDgvoN7TDeujJWV5Akg1ITU8WWEwrDnHjEkyzGEEvoDh4uaGJvZuNYl0WQL6_jTultDNW/pub?gid=1004744420&single=true&output=csv`
 - 2025: `https://docs.google.com/spreadsheets/d/e/2PACX-1vQuOieHRZ_cDgvoN7TDeujJWV5Akg1ITU8WWEwrDnHjEkyzGEEvoDh4uaGJvZuNYl0WQL6_jTultDNW/pub?gid=1785861805&single=true&output=csv`
 
 Books display sorted by status (in progress, done, DNF), then alphabetically by title. To add a new year, publish a new tab from the Google Sheet and add the URL to the `SHEETS` object in reading.html.
 
+### How the sheet feeds the page
+
+The full pipeline: Quick Add form → hidden "Form Responses 1" tab → ARRAYFORMULAs at Media Tracker row 231 spill form data into columns C/D/E/G/H/I → "Read in 20XX" tabs QUERY the Media Tracker for books → published CSVs (above) → reading.html.
+
+**The fragility rule:** in Media Tracker, from row 231 down, only columns A (Status), B (Year), and F (Where/Platform) are typed by hand. Typing anything into the other columns in that zone kills the ARRAYFORMULAs with #REF! and blanks every form-fed row (this happened 2026-07-15; fixed by deleting the typed cells and resubmitting those entries through the form). New items always go in through the Quick Add form, never typed into the tracker.
+
+### Parser and deploy notes
+
+- As of 2026-07-15 the CSV parser in reading.html handles standard CSV: quoted fields may contain commas, line breaks, and escaped quotes, and blank lines are skipped. Before that, a line break inside a sheet cell silently dropped that book from the page.
+- The canonical domain is `www.karenschoellkopf.com`. The apex domain and kgunette.github.io both 301 to it, so any curl check of the live site must follow redirects (`curl -L`) or hit www directly.
+
 ## License
 
 © 2026 Karen Schoellkopf
 
-Last updated: 2026-04-27
+Last updated: 2026-07-15
