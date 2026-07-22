@@ -112,6 +112,16 @@ npm run build:css
 
 Opening any page via file:// in Chrome works fully styled, because the relative `style.css` link resolves as long as the file sits in its real location. Only a *copy* of a page separated from the site folder renders unstyled (no `style.css` next to it), which is why single-file versions for emailing need the CSS inlined.
 
+**Running a local server**
+
+Start it yourself from a terminal at the repo root, then attach the browser preview to it (`portfolio` in this repo's `.claude/launch.json`, or `portfolio-live` in the Darkroom root registry). Both are attach-only entries with no command, deliberately.
+
+```bash
+python3 -m http.server 3457
+```
+
+The preview tool cannot start this one itself. Processes it spawns run in a sandbox where `getcwd()` fails and project files are unreadable, so every command form either dies at import or serves 404s for every path. The same command runs fine from an ordinary shell, which is what makes the failure look like a fluke. This cost about nine days of not being able to preview locally in July 2026 before it was diagnosed; full write-up in the Darkroom root `CLAUDE.md` under Tools & Setup.
+
 **Side-by-side layouts use `md:` (768px), not `lg:` (1024px)**
 
 The case study layout on projects.html activates side-by-side at `md:` so it matches when the desktop nav appears. Using `lg:` causes a visible mismatch where the nav looks "desktop" but content stays mobile-style stacked between 768–1023px.
@@ -128,7 +138,7 @@ Configuration (set up 2026-07-22):
 - **Key event `newsletter_subscribed`** — fires on a page view of `/writing/subscribed` (the post-confirmation page), counted once per session, no monetary value. This counts confirmed subscribers with source attribution. Buttondown's subscriber list stays the source of truth for the number itself; GA's version answers "which channel produced them."
 - **Internal traffic filter** — Karen's home IP (`68.161.218.25`) is excluded via the Define Internal Traffic rule + the active Internal Traffic data filter. If Karen's own visits start appearing in Realtime again, the ISP rotated the IP: update the rule with the new address. Coverage is home wifi only (phone on cellular still counts).
 - **Reports snapshot** — curated as the day-7 screenshot target: top metrics (Active users, New users, Engagement time, Views) + Top pages, Active users by first user source, Sessions by session source, Key events by event name, New vs Returning.
-- **Habit** — ~7 days after each post publishes: Reports snapshot → Last 7 days → screenshot → snapshot entry in the Signal log (`career/work-newsletter/Newsletter Planning.md`). The deploy that publishes a post prompts Karen to set an Apple Reminder for this (see the `/prep-newsletter-post` skill's deploy-day section).
+- **Habit** — ~7 days after each post publishes: Reports snapshot → Last 7 days → screenshot → snapshot entry in the Signal log (`career/work-newsletter/newsletter-log.md`). The deploy that publishes a post prompts Karen to set an Apple Reminder for this (see the `/prep-newsletter-post` skill's deploy-day section).
 - **Dual URLs** — every writing page answers at both `.../slug.html` and the extensionless `.../slug` (GitHub Pages serves both), so path-based GA reports split one page into two rows while title-based reports (like the Reports snapshot's Top pages card) merge them. Share the extensionless canonical; sum the rows in path views.
 
 ## Newsletter Signup Form
