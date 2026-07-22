@@ -129,6 +129,7 @@ Configuration (set up 2026-07-22):
 - **Internal traffic filter** — Karen's home IP (`68.161.218.25`) is excluded via the Define Internal Traffic rule + the active Internal Traffic data filter. If Karen's own visits start appearing in Realtime again, the ISP rotated the IP: update the rule with the new address. Coverage is home wifi only (phone on cellular still counts).
 - **Reports snapshot** — curated as the day-7 screenshot target: top metrics (Active users, New users, Engagement time, Views) + Top pages, Active users by first user source, Sessions by session source, Key events by event name, New vs Returning.
 - **Habit** — ~7 days after each post publishes: Reports snapshot → Last 7 days → screenshot → snapshot entry in the Signal log (`career/work-newsletter/Newsletter Planning.md`). The deploy that publishes a post prompts Karen to set an Apple Reminder for this (see the `/prep-newsletter-post` skill's deploy-day section).
+- **Dual URLs** — every writing page answers at both `.../slug.html` and the extensionless `.../slug` (GitHub Pages serves both), so path-based GA reports split one page into two rows while title-based reports (like the Reports snapshot's Top pages card) merge them. Share the extensionless canonical; sum the rows in path views.
 
 ## Newsletter Signup Form
 
