@@ -99,6 +99,8 @@ Design iterations live one level up at `../prototypes/prototypes-apr-2026/`. The
 
 GitHub Pages from [`kgunette/kgunette.github.io`](https://github.com/kgunette/kgunette.github.io). Pushes to `main` auto-deploy within about a minute. Custom domain `karenschoellkopf.com` is configured via the `CNAME` file at the repo root.
 
+**When a deploy publishes a new writing post:** right after verifying the live URL, prompt Karen to create an Apple Reminder for 7 days post-publish ("GA day-7 snapshot for `<slug>`") — details in the `/prep-newsletter-post` skill's deploy-day section.
+
 ## Making Changes
 
 **Rebuild CSS after editing HTML** (only needed if new Tailwind classes are added):
@@ -117,6 +119,16 @@ The case study layout on projects.html activates side-by-side at `md:` so it mat
 ## Contact Form
 
 The contact modal on all pages uses [Web3Forms](https://web3forms.com/). Form submissions are sent to the email configured in the Web3Forms dashboard. The access key is embedded in each page's modal HTML.
+
+## Analytics
+
+Google Analytics (GA4, property `G-5X6X7CQSRR`) is on every page via the gtag snippet in each page's head; new writing pages inherit it automatically.
+
+Configuration (set up 2026-07-22):
+- **Key event `newsletter_subscribed`** — fires on a page view of `/writing/subscribed` (the post-confirmation page), counted once per session, no monetary value. This counts confirmed subscribers with source attribution. Buttondown's subscriber list stays the source of truth for the number itself; GA's version answers "which channel produced them."
+- **Internal traffic filter** — Karen's home IP (`68.161.218.25`) is excluded via the Define Internal Traffic rule + the active Internal Traffic data filter. If Karen's own visits start appearing in Realtime again, the ISP rotated the IP: update the rule with the new address. Coverage is home wifi only (phone on cellular still counts).
+- **Reports snapshot** — curated as the day-7 screenshot target: top metrics (Active users, New users, Engagement time, Views) + Top pages, Active users by first user source, Sessions by session source, Key events by event name, New vs Returning.
+- **Habit** — ~7 days after each post publishes: Reports snapshot → Last 7 days → screenshot → snapshot entry in the Signal log (`career/work-newsletter/Newsletter Planning.md`). The deploy that publishes a post prompts Karen to set an Apple Reminder for this (see the `/prep-newsletter-post` skill's deploy-day section).
 
 ## Newsletter Signup Form
 
