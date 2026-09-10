@@ -69,6 +69,9 @@ The hero version also has `fetchpriority="high"` since it's above-the-fold LCP c
 │   ├── index.html       # Writing index: tagline, signup card, post list
 │   ├── subscribed.html  # Post-confirmation "You're in" page (noindexed, no footer subscribe CTA; Buttondown's after-confirming redirect lands here)
 │   └── *.html           # One page per essay, generated from career/work-newsletter/posts/*.md via /prep-newsletter-post
+├── projects/            # Case study pages, served at /projects/<slug> (projects.html is the index)
+│   ├── dusknote.html
+│   └── dusknote/        # That page's screenshots
 ├── style.css            # Production Tailwind CSS
 ├── input.css            # Tailwind source with custom styles
 ├── tailwind.config.js   # Theme config (colors, fonts, forms plugin)
@@ -100,6 +103,8 @@ Design iterations live one level up at `../prototypes/prototypes-apr-2026/`. The
 GitHub Pages from [`kgunette/kgunette.github.io`](https://github.com/kgunette/kgunette.github.io). Pushes to `main` auto-deploy within about a minute. Custom domain `karenschoellkopf.com` is configured via the `CNAME` file at the repo root.
 
 **When a deploy publishes a new writing post:** right after verifying the live URL, prompt Karen to create an Apple Reminder for 7 days post-publish ("GA day-7 snapshot for `<slug>`") — details in the `/prep-newsletter-post` skill's deploy-day section.
+
+**Paths this site can never serve.** GitHub Pages mounts every repo of Karen's that has Pages switched on under this domain, at a path named after the repo, and that path wins over any file here. Today that reserves `/dusknote`, `/art-portfolio`, `/creditcards`, `/hire-more-women-in-tech`, and `/sevendeadlysinsts`; each redirects to that repo's own site. Found 2026-09-10 when the Dusknote case study was first deployed at `/dusknote` and its screenshots redirected to dusknote.app. New pages go under a folder (`/projects/`, `/writing/`), which no repo can take over. The Tailwind build scans `projects/*.html` since the same day.
 
 ## Making Changes
 
