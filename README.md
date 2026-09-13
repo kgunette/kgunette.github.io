@@ -68,7 +68,8 @@ The hero version also has `fetchpriority="high"` since it's above-the-fold LCP c
 ├── writing/             # Writing section (essays + newsletter signup)
 │   ├── index.html       # Writing index: tagline, signup card, post list
 │   ├── subscribed.html  # Post-confirmation "You're in" page (noindexed, no footer subscribe CTA; Buttondown's after-confirming redirect lands here)
-│   └── *.html           # One page per essay, generated from career/work-newsletter/posts/*.md via /prep-newsletter-post
+│   ├── *.html           # One page per essay, generated from career/work-newsletter/posts/*.md via /prep-newsletter-post
+│   └── <slug>/          # A post's share picture, when it has one (writing/dusknote/preview.png)
 ├── projects/            # Case study pages, served at /projects/<slug> (projects.html is the index)
 │   ├── dusknote.html
 │   └── dusknote/        # That page's screenshots
