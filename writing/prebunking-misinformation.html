@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Short-Circuiting Misinformation | Karen Schoellkopf</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml"/>
+<link rel="canonical" href="https://karenschoellkopf.com/writing/prebunking-misinformation"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<script>document.documentElement.classList.add('js');</script>
+<meta name="description" content="Prebunking teaches people to spot misinformation before it lands. It worked at scale, until the platforms and the government pulled back. Here's what it is, what happened, and where it could live next."/>
+<meta property="og:title" content="Short-Circuiting Misinformation"/>
+<meta property="og:description" content="Prebunking teaches people to spot misinformation before it lands. It worked at scale, until the platforms and the government pulled back. Here's what it is, what happened, and where it could live next."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://karenschoellkopf.com/writing/prebunking-misinformation"/>
+<meta property="og:image" content="https://karenschoellkopf.com/writing/prebunking-misinformation/preview.png"/>
+<meta property="og:image:width" content="2000"/>
+<meta property="og:image:height" content="1050"/>
+<meta property="og:image:alt" content="A ransom-note style title: 'Short-Circuiting' on a black banner, above 'Misinformation' spelled out in mismatched cut-out letters styled after social media and news logos."/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="stylesheet" href="../style.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;700;800&amp;family=Manrope:wght@200;300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5X6X7CQSRR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5X6X7CQSRR');
+</script>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed pb-20 md:pb-0">
+<!-- Skip to content (accessibility) -->
+<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:font-headline focus:font-bold focus:text-sm">Skip to content</a>
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 z-50 w-full bg-surface/80 backdrop-blur-md transition-all duration-300 border-b border-outline-variant/30">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-5xl mx-auto">
+<a class="text-xl font-bold font-headline text-on-surface tracking-tight" href="../index.html">Karen Schoellkopf</a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-secondary/60 font-medium text-xs tracking-[0.1em] font-label hover:opacity-100 hover:text-coral-accent transition-all duration-300 nav-hover-link" href="../index.html">Home</a>
+<a class="text-secondary/60 font-medium text-xs tracking-[0.1em] font-label hover:opacity-100 hover:text-coral-accent transition-all duration-300 nav-hover-link" href="../projects.html">Projects</a>
+<a class="text-on-surface font-semibold text-xs tracking-[0.1em] font-label hover:text-coral-accent transition-colors duration-300" href="index.html" aria-current="true">Writing<span class="text-coral-accent">.</span></a>
+<a class="text-secondary/60 font-medium text-xs tracking-[0.1em] font-label hover:opacity-100 hover:text-coral-accent transition-all duration-300 nav-hover-link" href="../about.html">About</a>
+<button type="button" class="js-contact-trigger text-secondary/60 font-medium text-xs tracking-[0.1em] font-label hover:opacity-100 hover:text-coral-accent transition-all duration-300 nav-hover-link cursor-pointer">Contact</button>
+</div>
+<button id="menu-toggle" class="md:hidden" aria-label="Open menu">
+<svg class="w-6 h-6 text-on-surface" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+</button>
+</div>
+</nav>
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu" class="fixed inset-0 z-[60] bg-surface/95 backdrop-blur-md hidden flex-col items-center justify-center gap-10">
+<button id="close-menu" class="absolute top-5 right-6" aria-label="Close menu">
+<svg class="w-8 h-8 text-on-surface" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+</button>
+<a class="text-2xl font-headline font-bold text-secondary" href="../index.html">Home</a>
+<a class="text-2xl font-headline font-bold text-secondary" href="../projects.html">Projects</a>
+<a class="text-2xl font-headline font-bold text-on-surface" href="index.html" aria-current="true">Writing</a>
+<a class="text-2xl font-headline font-bold text-secondary" href="../about.html">About</a>
+<button type="button" class="js-contact-trigger text-2xl font-headline font-bold text-secondary cursor-pointer text-left">Contact</button>
+</div>
+<main id="main-content" class="pt-32">
+<article class="max-w-[680px] mx-auto px-6">
+
+<!-- Back link -->
+<a href="index.html" class="inline-flex items-center gap-2 text-xs font-label uppercase tracking-[0.15em] text-secondary/70 hover:text-coral-accent transition-all mb-10 anim d1">
+<svg class="w-3 h-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor"><path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z"/></svg>
+All writing
+</a>
+
+<!-- Meta line (full date on the post; read time auto-calculated at bottom) -->
+<p class="text-xs font-label uppercase tracking-[0.18em] text-secondary/70 mb-5 anim d1">September 27, 2026 · <span id="read-time">–</span> min read</p>
+
+<!-- Title -->
+<h1 class="font-headline font-extrabold text-on-surface text-4xl md:text-5xl leading-[1.1] mb-6 anim d2">Short-Circuiting Misinformation</h1>
+
+<!-- Dek -->
+<p class="text-lg md:text-xl font-body font-light text-secondary leading-relaxed mb-10 anim d3">Prebunking teaches people to spot misinformation before it lands. It worked at scale, until the platforms and the government pulled back. Here's what it is, what happened, and where it could live next.</p>
+
+<!-- Picture -->
+<img src="prebunking-misinformation/preview.png" alt="A ransom-note style title: 'Short-Circuiting' on a black banner, above 'Misinformation' spelled out in mismatched cut-out letters styled after social media and news logos." width="2000" height="1050" class="block w-full h-auto rounded-lg border border-outline-variant/60 mb-10"/>
+
+<!-- Divider -->
+<div class="w-12 h-[2px] bg-primary mb-8"></div>
+
+<!-- Low-key top CTA -->
+<p class="text-sm font-body text-secondary mb-12"><a href="#subscribe" class="text-primary underline decoration-outline-variant underline-offset-2 hover:text-coral-accent hover:decoration-coral-accent transition-colors">Don't miss a post &rarr;</a></p>
+
+<!-- ============================================================ -->
+<!-- BODY: poured from career/work-newsletter/posts/prebunking-misinformation.md -->
+<!-- ============================================================ -->
+<div class="prose-body text-base md:text-lg font-body font-light text-on-surface/90">
+
+<p>I had the lucky opportunity to attend a lecture by Sander van der Linden through the Climatebase Fellowship I'm a part of, and I was really taken with the work he has done around misinformation, how it works, and how to short circuit its power.</p>
+
+<h2 class="font-headline font-bold text-on-surface text-2xl md:text-3xl mt-14 mb-5 leading-tight">This Moment in Misinformation</h2>
+
+<p>Misinformation isn't new, but it has certainly escalated in scope and scale in the United States since the 2016 presidential election. I see this trend as stemming from where people get their news, which has ultimately led to a "feelings over facts" tone in American discourse. Some news outlets, like Fox News, have been pushing misinformation while calling it news for a while (and have had to admit it publicly: they <a href="https://www.nbcnews.com/media/fox-news-settles-dominion-defamation-lawsuit-rcna80285" target="_blank" rel="noopener">paid $787.5M to Dominion in April 2023</a> over false 2020 election claims). Many people turn to social media and influencers that they agree with to get their news, which can create its own bubble of unverified information. And on both of these types of platforms, to varying degrees, anyone can claim to be an expert and speak with authority, which makes it hard to discern who the real experts are. I watch <a href="https://www.jessicaknurick.com/" target="_blank" rel="noopener">Dr. Jessica Knurick's</a> shortform reaction and teardown videos that respond to fear driven influencer videos about food and health misinformation. It's wild to see how many of them there are.</p>
+
+<p>Add to that a more widespread distrust of American government institutions, and information visibly disappearing from U.S. government websites: <a href="https://www.npr.org/2025/08/08/nx-s1-5495338/climate-change-environment-websites-trump" target="_blank" rel="noopener">the National Climate Assessment's home</a>, <a href="https://www.nesdis.noaa.gov/about/documents-reports/notice-of-changes/2025-notice-of-changes/billion-dollar-weather-and-climate-disasters" target="_blank" rel="noopener">NOAA's tracker of billion-dollar weather disasters</a>, and <a href="https://www.npr.org/2025/08/08/nx-s1-5495338/climate-change-environment-websites-trump" target="_blank" rel="noopener">the tools that showed which communities climate funding should reach</a>. <a href="https://envirodatagov.org/" target="_blank" rel="noopener">EDGI</a> <a href="https://time.com/7344773/women-saving-federal-climate-data/" target="_blank" rel="noopener">counted 847 substantive changes</a> to federal environmental pages in the first six months of 2025, and two thirds of them reduced public access. Past missing information, federal leaders like RFK Jr. express fringe theories on health from the bully pulpit, including anti-vaccination and poorly explained "healthy foods" initiatives. In climate specifically, misinformation campaigns have shifted from what has historically been about the science ("It snowed today, so where's your global warming?"), to the climate solutions ("solar will NEVER work, the sun is only out in the day!").</p>
+
+<p>In digging into misinformation more deeply, I have been struck by how this is actually a 3 part problem, featuring digital literacy, distribution infrastructure, and policy compliance.</p>
+
+<h2 class="font-headline font-bold text-on-surface text-2xl md:text-3xl mt-14 mb-5 leading-tight">What is Prebunking?</h2>
+
+<p>Quite simply, if debunking is something that must be done after misinformation is out in the wild (a cure), prebunking is done BEFORE misinformation picks up traction (prevention). The concept of prebunking was developed by psychologists Sander van der Linden and John Cook, whose <a href="https://onlinelibrary.wiley.com/doi/full/10.1002/gch2.201600008" target="_blank" rel="noopener">studies</a> on climate misinformation came out in <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0175799" target="_blank" rel="noopener">2017</a>. It draws on a much older idea of inoculation theory, first tested by social psychologist William McGuire <a href="https://econtent.hogrefe.com/doi/abs/10.1027/1864-1105/a000396" target="_blank" rel="noopener">in 1961</a>, at the height of Cold War fears about "brainwashing." This inoculation idea was built around protecting soldiers from enemy propaganda, but spent the next fifty years mostly in academic journals, until social media brought it back to the forefront.</p>
+
+<p>The core tenets of the theory include:</p>
+
+<ul class="list-disc pl-6 space-y-3 mb-8">
+<li class="leading-relaxed"><strong>Inoculation</strong>. The idea is to subject everyone to a weakened dose of the misinformation campaign or attack, and then take it apart piece by piece, so that everyone can see how it works. Both parts of this are crucial: just knowing a trick exists doesn't mean you won't fall for it. For example, imagine that your company's IT team sent a fake phishing email to see who clicks, and, if you DID click it, it brings you to a page showing the clues you missed.</li>
+<li class="leading-relaxed"><strong>It can be technique-based vs. issue-specific</strong>. An issue-specific prebunk warns you about one specific lie or incorrect story. A technique-based prebunk teaches you the trick behind it, which could be used in other stories. To keep our phishing example:
+<ul class="list-disc pl-6 space-y-2 mt-3">
+<li class="leading-relaxed">Issue-specific: "Watch out for the fake email from 'HR' about your bonus." You'll be attuned to bonus related emails in specific, but may miss attacks.</li>
+<li class="leading-relaxed">Technique-based: "Any email that rushes you to act right now is a red flag." That covers the bonus email, a fake invoice, or any other attack that uses this rush method.</li>
+</ul></li>
+</ul>
+
+<p>Van der Linden actually made a game to illustrate prebunking, called the <a href="https://getbadnews.com/en" target="_blank" rel="noopener">Bad News game</a>. You start as a nobody with no clout, and the game incentivizes you to become a villainous fake news influencer, where you earn badges for mastering tricks like impersonating experts or stirring up outrage. The goal of the game is to break down the tricks step by step, and since you've done it yourself, you can spot it when someone uses it on you in the real world.</p>
+
+<p>Philosopher Daniel Williams makes <a href="https://www.bostonreview.net/articles/the-fake-news-about-fake-news/" target="_blank" rel="noopener">two fair critiques</a> of van der Linden's book. First, he believes that the tests that van der Linden uses may measure the wrong thing: people score better at spotting fake headlines after playing the game, but someone who decides everything is fake would score perfectly too. Second, the tricks prebunking teaches aren't unique to misinformation, and can show up in true content as well (like emotional appeals, polarizing messages, and even conspiracy claims). Where I disagree with him is his claim that people are hard to influence, which felt myopic, and didn't take into account long running misinformation campaigns.</p>
+
+<h2 class="font-headline font-bold text-on-surface text-2xl md:text-3xl mt-14 mb-5 leading-tight">Prebunking at Scale</h2>
+
+<p>There are interesting examples of big social media and search companies using prebunking on their platforms. Google's Jigsaw team ran short prebunking videos as YouTube ads; one campaign about Ukrainian refugees reached <a href="https://medium.com/jigsaw/defanging-disinformations-threat-to-ukrainian-refugees-b164dbbc1c60" target="_blank" rel="noopener">38 million views</a> across Poland, Czechia, and Slovakia, and a 2024 campaign ahead of the EU elections reached <a href="https://www.nature.com/articles/s44271-025-00379-3" target="_blank" rel="noopener">about 120 million users</a>. Meta built a page taking apart common climate myths, which drew <a href="https://about.fb.com/news/2021/09/tackling-climate-change-together/" target="_blank" rel="noopener">about 100,000 visitors a day</a> (it is worth noting that climate misinformation on Facebook was being <a href="https://grist.org/accountability/report-climate-misinformation-facebook-viewed-million-times-daily/" target="_blank" rel="noopener">viewed more than ten times as often</a>). Before the 2020 election, Twitter put a notice at the top of people's feeds warning that results might take days, getting ahead of fraud claims before the slow count could feed them; <a href="https://www.npr.org/2022/10/28/1132021770/false-information-is-everywhere-pre-bunking-tries-to-head-it-off-early" target="_blank" rel="noopener">in its own survey afterward</a>, half the people who saw one said it made them think more critically about what else they were seeing in their feed. In Slovakia, the videos barely worked. Jigsaw first suspected it was because they were dubbed instead of made for local viewers; <a href="https://medium.com/jigsaw/defanging-disinformations-threat-to-ukrainian-refugees-b164dbbc1c60" target="_blank" rel="noopener">later focus groups</a> found anti-migrant narratives were already widespread there. Either way, you have to meet your audience where they are.</p>
+
+<p>By early 2025, the politics had shifted. <a href="https://www.npr.org/2025/01/07/nx-s1-5251151/meta-fact-checking-mark-zuckerberg-trump" target="_blank" rel="noopener">Meta ended fact-checking in the US</a> and <a href="https://www.axios.com/2025/01/16/google-fact-check-eu" target="_blank" rel="noopener">Google pulled out of its fact-checking commitments in the EU</a>. Van der Linden says the platforms dismantled their prebunking work as well. The US government pulled back at the same time: the federal cybersecurity agency's misinformation staff <a href="https://cyberscoop.com/cisa-misinformation-disinformation-administrative-leave/" target="_blank" rel="noopener">were put on leave</a>, and a State Department office working on foreign disinformation <a href="https://www.technologyreview.com/2025/04/16/1115256/us-office-that-counters-foreign-disinformation-is-being-eliminated-say-officials/" target="_blank" rel="noopener">was shut down</a>. Those two offices had backed <a href="https://www.cam.ac.uk/research/news/game-combats-political-misinformation-by-letting-players-undermine-democracy" target="_blank" rel="noopener">one of van der Linden's lab's own prebunking games</a>.</p>
+
+<p>This dovetails with the platforms' long-standing position that they aren't responsible for what people post on them. <a href="https://www.law.cornell.edu/uscode/text/47/230" target="_blank" rel="noopener">Section 230</a>, a 1996 law, says an online service cannot be treated as the publisher of what its users post, so in general, they cannot be sued for user speech. They have frequently used this to shirk responsibility for content moderation, and as the political winds shifted, the teams that might have done it keep shrinking. After Musk bought Twitter, <a href="https://www.forbes.com/sites/thomasbrewster/2024/01/10/elon-musk-fired-80-per-cent-of-twitter-x-engineers-working-on-trust-and-safety/" target="_blank" rel="noopener">its trust and safety staff shrank by about a third, and its safety engineers by 80%</a>, and <a href="https://www.cnbc.com/2023/05/26/tech-companies-are-laying-off-their-ethics-and-safety-teams-.html" target="_blank" rel="noopener">Meta cut hundreds of moderation and integrity roles in 2023</a>.</p>
+
+<p>Governments can deliver prebunks too. The US &amp; UK ran what's considered to be an effective prebunk ahead of Russia's invasion of Ukraine. In February 2022, three weeks before Russia invaded Ukraine, the US <a href="https://2021-2025.state.gov/briefings/department-press-briefing-february-3-2022/" target="_blank" rel="noopener">publicly warned</a>, <a href="https://www.itv.com/news/2022-02-04/liz-truss-condemns-russia-over-video-plot-against-ukraine" target="_blank" rel="noopener">with the UK backing it</a>, that Russia was planning to fake a video of a Ukrainian attack as its excuse to invade. Van der Linden credited this campaign with stalling the war for a few critical weeks, which he says forced Putin to find a new excuse, forewarning their allies and buying them about two weeks to prepare for Russia's eventual invasion.</p>
+
+<p>If you also take into account the erosion of trust in US institutions during both Trump administrations, it becomes harder to imagine where prebunking would even happen. Who would believe a government warning from the U.S. executive branch now? Even the WHO struggles to reach the people it wants to reach most about vaccination: vaccine skeptics are least likely to trust them.</p>
+
+<p>The message distribution infrastructure is controlled by entities that are no longer trusted as they once were. It belongs to private companies that dropped this work when the political winds shifted, or to a government that has gone rogue in what it chooses to tell its own citizens. The prebunk campaigns reached millions through ads and algorithms, using the same tools that spread the misinformation. Since the platforms owned the reach, when they stopped being interested in promoting prebunking, the reach disappeared as well.</p>
+
+<h2 class="font-headline font-bold text-on-surface text-2xl md:text-3xl mt-14 mb-5 leading-tight">Where do we go from here?</h2>
+
+<p>All of this leads to a strong conviction that misinformation is a literacy problem, an infrastructure problem, and a policy problem.</p>
+
+<p><strong>Literacy.</strong> Training people to recognize manipulation could be a mandatory compliance issue. Big tech companies already require regular privacy and security training, and New York state already requires banks and insurers to train every employee, every year, to spot phishing and deepfakes (<a href="https://www.law.cornell.edu/regulations/new-york/23-NYCRR-500.14" target="_blank" rel="noopener">23 NYCRR 500</a>). It is important to remember it's not enough to simply warn about it, you must show people how it works, so that they recognize the patterns. If we already require people to learn how phishing manipulates them, it's easy to extend to teaching them how misinformation does.</p>
+
+<p><strong>Infrastructure.</strong> The alternative to the platforms that own the reach is to build something that nobody (or everybody!) owns. There are working alternatives to the main social platforms like <a href="https://techcrunch.com/2025/01/13/mastodon-announces-transition-to-non-profit-structure" target="_blank" rel="noopener">Mastodon</a> (run by a nonprofit) and <a href="https://techcrunch.com/2026/03/19/bluesky-announces-100m-series-b-after-ceo-transition/" target="_blank" rel="noopener">Bluesky</a> (backed by VC), but I know that it's a real challenge to give up the exponential reach of Facebook or Google. The tradeoff is a tricky one, in that owning the infrastructure means giving up reach of the established companies, and renting the reach means depending on someone else's business model.</p>
+
+<p>Infrastructure isn't just on social or news platforms. When NOAA <a href="https://www.nesdis.noaa.gov/about/documents-reports/notice-of-changes/2025-notice-of-changes/billion-dollar-weather-and-climate-disasters" target="_blank" rel="noopener">stopped updating</a> its tracker of billion-dollar weather disasters, the nonprofit Climate Central <a href="https://www.climatecentral.org/climate-matters/billion-dollar-disasters-oct-2025" target="_blank" rel="noopener">brought it back five months later</a>, run by the same scientist who had led it at NOAA for 15 years. Others have done the same. In April 2025, the University of Minnesota <a href="https://www.contagionlive.com/view/cidrap-launches-its-vaccine-integrity-project" target="_blank" rel="noopener">began reviewing vaccine evidence independently</a> so doctors' groups could write their own guidance, two months before the CDC's vaccine advisors were <a href="https://www.cnbc.com/2025/06/09/rfk-jr-cdc-panel-vaccines.html" target="_blank" rel="noopener">all replaced</a>. Harvard Law School's library <a href="https://www.thecrimson.com/article/2025/2/6/hls-federal-data-vault-launch/" target="_blank" rel="noopener">copied all 311,000 datasets on data.gov</a> into a public archive. And a <a href="https://www.datarescueproject.org/" target="_blank" rel="noopener">volunteer network of librarians and archivists</a> has saved <a href="https://www.newamerica.org/insights/how-at-risk-federal-data-is-being-rescued-and-preserved/" target="_blank" rel="noopener">more than 1,200 federal datasets</a>.</p>
+
+<p><strong>Policy.</strong> Section 230 covers what users post. It doesn't cover what platforms design, and a prebunk is design: Twitter's election notice was a prompt the platform put at the top of the feed, not a change to anyone's post. Design is also where accountability has actually landed. In August, Meta <a href="https://oag.ca.gov/news/press-releases/attorney-general-bonta-secures-transformative-17-billion-settlement-meta" target="_blank" rel="noopener">settled with 51 state attorneys general for about $17 billion</a> over designing Instagram and Facebook to be addictive for teens. <a href="https://www.cnbc.com/2026/08/28/new-meta-safeguards-teens.html" target="_blank" rel="noopener">The fixes are all product changes</a>: time limits, hidden likes, and a feed that isn't run by the algorithm (though teens have to turn it on themselves). If regulators can require a way to turn off the algorithm, itself a major vector for misinformation, there's a case to be made for requiring a prebunk. That comes with real tradeoffs, and definitely has nuances to be hammered out. The <a href="https://www.eff.org/deeplinks/2026/09/metas-17-billion-settlement-bad-deal-teens-and-all-social-media-users" target="_blank" rel="noopener">Electronic Frontier Foundation points out</a> that this settlement already requires Meta to verify everyone's age and watch teens more closely, and requiring platforms to show certain messages could potentially start its own free speech fight.</p>
+
+<p>Longer term, we need government institutions that serve their citizens, and news outlets and tech platforms that take responsibility for what they distribute. That's how trust gets rebuilt. And in the short term, we need to get better at telling truth from fiction, and to find the pockets of trust where that can still happen.</p>
+
+<p>---</p>
+
+<p>---</p>
+
+</div>
+
+<!-- Newsletter CTA -->
+<div id="subscribe" class="mt-16 mb-24 scroll-mt-28 border border-outline-variant rounded-[8px] bg-white/60 px-7 py-9 md:px-10 md:py-10">
+<p class="text-xs font-label uppercase tracking-[0.18em] text-primary mb-3">The newsletter</p>
+<h3 class="font-headline font-bold text-on-surface text-2xl mb-2">Don't miss a post</h3>
+<p class="text-base font-body font-light text-secondary leading-relaxed mb-6">Sharing thoughts once or twice a month. I care about product, power, data privacy, ethical AI, and art &amp; culture. No spam, unsubscribe anytime.</p>
+<form action="https://buttondown.com/api/emails/embed-subscribe/kgunette" method="post" class="embeddable-buttondown-form flex items-stretch border-2 border-outline-variant focus-within:border-primary transition-colors overflow-hidden">
+<label for="bd-email" class="sr-only">Enter your email</label>
+<input type="email" name="email" id="bd-email" required placeholder="your@email.com" class="flex-1 min-w-0 bg-white border-0 focus:ring-0 focus:outline-none text-base font-body px-4 py-3"/>
+<button type="submit" class="bg-primary text-white px-8 py-3 font-headline font-bold uppercase text-xs tracking-widest hover:bg-primary-dark transition-colors whitespace-nowrap">Subscribe</button>
+</form>
+</div>
+
+</article>
+</main>
+<!-- Contact Modal -->
+<div id="contact-modal" class="fixed inset-0 z-[70] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-label="Contact form">
+<div id="contact-backdrop" class="absolute inset-0 bg-on-surface/40 backdrop-blur-sm"></div>
+<div class="relative bg-surface w-full max-w-lg mx-auto p-8 md:p-12 rounded-[6px] shadow-xl max-h-[90vh] overflow-y-auto">
+<button id="contact-close" class="absolute top-4 right-4" aria-label="Close contact form">
+<svg class="w-6 h-6 text-secondary hover:text-on-surface transition-colors" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+</button>
+<h2 class="text-2xl font-headline font-bold text-on-surface mb-3">Get in touch</h2>
+<form id="contact-form">
+<div id="contact-fields" class="space-y-6">
+<input type="hidden" name="access_key" value="efe933d5-a3e5-4937-9f97-fed7bc1cd02f">
+<input type="hidden" name="subject" value="Your message to Karen Schoellkopf">
+<input type="checkbox" name="botcheck" class="hidden" style="display:none">
+<div>
+<label for="contact-name" class="block text-xs font-label uppercase tracking-[0.15em] text-secondary font-bold mb-2">Name</label>
+<input id="contact-name" name="name" type="text" required class="w-full bg-transparent border-b-2 border-outline-variant focus:border-primary focus:ring-0 focus:outline-none text-base font-body px-2 py-3 transition-all duration-300" placeholder=" Your name">
+</div>
+<div>
+<label for="contact-email" class="block text-xs font-label uppercase tracking-[0.15em] text-secondary font-bold mb-2">Email</label>
+<input id="contact-email" name="email" type="email" required class="w-full bg-transparent border-b-2 border-outline-variant focus:border-primary focus:ring-0 focus:outline-none text-base font-body px-2 py-3 transition-all duration-300" placeholder=" your@email.com">
+</div>
+<div>
+<label for="contact-message" class="block text-xs font-label uppercase tracking-[0.15em] text-secondary font-bold mb-2">Message</label>
+<textarea id="contact-message" name="message" required rows="4" class="w-full bg-transparent border-b-2 border-outline-variant focus:border-primary focus:ring-0 focus:outline-none text-base font-body px-2 py-3 transition-all duration-300 resize-none" placeholder=" Tell me about the project you would like to discuss!"></textarea>
+</div>
+<button type="submit" class="w-full bg-primary text-white px-8 py-4 font-headline font-bold uppercase text-xs tracking-widest hover:bg-primary-dark transition-colors mt-4">Send Message</button>
+</div>
+<div id="contact-success" class="hidden py-8">
+<p class="text-lg font-body font-light text-secondary">Thanks! I'll get back to you shortly.</p>
+</div>
+</form>
+</div>
+</div>
+<!-- Footer -->
+<footer class="bg-surface border-t border-outline-variant/30 py-12">
+<div class="flex flex-col items-center gap-5 w-full text-center px-4">
+<div class="text-lg font-bold text-on-surface font-headline tracking-tighter uppercase">Karen Schoellkopf</div>
+<a href="#subscribe" class="text-xs font-label uppercase tracking-[0.15em] text-primary hover:text-coral-accent transition-colors">Subscribe to the newsletter &rarr;</a>
+<div class="w-12 h-[1px] bg-primary mt-2"></div>
+<p class="text-xs font-body font-light text-secondary tracking-wide uppercase">Made with <span class="heart-wave" style="margin: 0 4px;">❤️</span> in Brooklyn</p>
+<p class="text-[10px] text-outline font-label uppercase tracking-[0.3em] mt-2">&copy; 2026 All Rights Reserved</p>
+</div>
+</footer>
+<script>
+  // Estimated read time from the article body (~225 words/min)
+  (function () {
+    var body = document.querySelector('.prose-body');
+    var el = document.getElementById('read-time');
+    if (body && el) {
+      var words = body.innerText.trim().split(/\s+/).filter(Boolean).length;
+      el.textContent = Math.max(1, Math.round(words / 225));
+    }
+  })();
+
+  // Mobile menu toggle
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const closeMenu = document.getElementById('close-menu');
+  const menuLinks = mobileMenu.querySelectorAll('a, button:not(#close-menu)');
+  menuToggle.addEventListener('click', () => {
+    mobileMenu.classList.remove('hidden');
+    mobileMenu.classList.add('flex');
+  });
+  function closeMobileMenu() {
+    mobileMenu.classList.add('hidden');
+    mobileMenu.classList.remove('flex');
+  }
+  closeMenu.addEventListener('click', closeMobileMenu);
+  menuLinks.forEach(link => link.addEventListener('click', closeMobileMenu));
+
+  // Contact modal
+  const contactModal = document.getElementById('contact-modal');
+  const contactBackdrop = document.getElementById('contact-backdrop');
+  const contactClose = document.getElementById('contact-close');
+  const contactForm = document.getElementById('contact-form');
+  const contactSuccess = document.getElementById('contact-success');
+  const contactFields = document.getElementById('contact-fields');
+  function openContactModal() {
+    contactModal.classList.remove('hidden');
+    contactModal.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => contactModal.querySelector('input[name="name"]')?.focus(), 100);
+    contactFields.classList.remove('hidden');
+    contactSuccess.classList.add('hidden');
+    contactForm.reset();
+  }
+  function closeContactModal() {
+    contactModal.classList.add('hidden');
+    contactModal.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
+  contactBackdrop.addEventListener('click', closeContactModal);
+  contactClose.addEventListener('click', closeContactModal);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !contactModal.classList.contains('hidden')) closeContactModal();
+  });
+  contactModal.addEventListener('keydown', (e) => {
+    if (e.key !== 'Tab') return;
+    const focusable = contactModal.querySelectorAll('button, input, textarea, [tabindex]:not([tabindex="-1"])');
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  });
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(Object.fromEntries(new FormData(contactForm)))
+      });
+      if (response.ok) { contactFields.classList.add('hidden'); contactSuccess.classList.remove('hidden'); }
+      else { submitBtn.textContent = 'Something went wrong. Try again?'; submitBtn.disabled = false; setTimeout(() => { submitBtn.textContent = originalText; }, 3000); }
+    } catch { submitBtn.textContent = 'Something went wrong. Try again?'; submitBtn.disabled = false; setTimeout(() => { submitBtn.textContent = originalText; }, 3000); }
+  });
+
+  // Contact modal triggers
+  document.querySelectorAll('.js-contact-trigger').forEach(btn => btn.addEventListener('click', openContactModal));
+
+  // Newsletter subscribe: submit in the background so readers stay on the page
+  document.querySelectorAll('.embeddable-buttondown-form').forEach(function (form) {
+    var msg = document.createElement('p');
+    msg.className = 'text-sm font-body text-secondary mt-3 hidden';
+    form.parentNode.insertBefore(msg, form.nextSibling);
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var btn = form.querySelector('button[type="submit"]');
+      var original = btn.textContent;
+      btn.disabled = true;
+      btn.classList.add('subscribing');
+      btn.innerHTML = 'Subscribing<span class="dot">.</span><span class="dot">.</span><span class="dot">.</span>';
+      var body = new URLSearchParams(new FormData(form));
+      fetch(form.action, { method: 'POST', body: body, mode: 'no-cors' })
+        .then(function () {
+          form.style.display = 'none';
+          msg.textContent = 'Thanks! Check your email to confirm your subscription.';
+          msg.classList.remove('hidden');
+        })
+        .catch(function () {
+          btn.disabled = false;
+          btn.classList.remove('subscribing');
+          btn.textContent = original;
+          msg.textContent = "Hmm, that didn't go through, please try again.";
+          msg.classList.remove('hidden');
+        });
+    });
+  });
+</script>
+</body></html>
